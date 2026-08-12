@@ -9,9 +9,11 @@ export default function Footer() {
           {/* Brand and Slogan */}
           <div className="md:col-span-2 space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-primary shadow-inner">
-                <Sparkles className="w-5 h-5 text-accent animate-pulse" />
-              </span>
+              <img
+                src="/logo_clb_hoatrenda.jpg"
+                alt="Hoa Trên Đá Logo"
+                className="w-9 h-9 rounded-full object-cover shadow-inner"
+              />
               <span className="text-lg font-bold tracking-wider">
                 HOA TRÊN ĐÁ
               </span>

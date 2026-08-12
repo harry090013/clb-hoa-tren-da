@@ -25,9 +25,11 @@ export default function Header() {
           {/* Logo / Brand Name */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center space-x-2 group">
-              <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:bg-primary-dark transition-colors duration-200">
-                <Sparkles className="w-5 h-5 text-accent animate-pulse" />
-              </span>
+              <img
+                src="/logo_clb_hoatrenda.jpg"
+                alt="Hoa Trên Đá Logo"
+                className="w-10 h-10 rounded-full object-cover shadow-md group-hover:opacity-90 transition-opacity duration-200"
+              />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-primary leading-tight tracking-wide font-sans">
                   HOA TRÊN ĐÁ
