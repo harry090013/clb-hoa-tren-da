@@ -20,6 +20,7 @@ function StoryFormContent() {
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(false);
   const [projects, setProjects] = useState<Project[]>([]);
+  const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
 
   // Form states
   const [title, setTitle] = useState("");
@@ -28,7 +29,7 @@ function StoryFormContent() {
   const [content, setContent] = useState("");
   const [coverImage, setCoverImage] = useState("");
   const [authorName, setAuthorName] = useState("");
-  const [storyType, setStoryType] = useState("Nhật ký hành trình");
+  const [categoryId, setCategoryId] = useState("");
   const [projectId, setProjectId] = useState("");
   const [status, setStatus] = useState("draft");
   const [featured, setFeatured] = useState(false);
@@ -38,7 +39,15 @@ function StoryFormContent() {
       const { data } = await supabase.from("projects").select("id, title");
       setProjects(data || []);
     }
+    async function loadCategories() {
+      const { data } = await supabase
+        .from("story_categories")
+        .select("id, name")
+        .order("display_order", { ascending: true });
+      setCategories(data || []);
+    }
     loadProjects();
+    loadCategories();
   }, []);
 
   useEffect(() => {
@@ -62,7 +71,7 @@ function StoryFormContent() {
         setContent(data.content || "");
         setCoverImage(data.cover_image || "");
         setAuthorName(data.author_name || "");
-        setStoryType(data.story_type || "Nhật ký hành trình");
+        setCategoryId(data.category_id || "");
         setProjectId(data.project_id || "");
         setStatus(data.status || "draft");
         setFeatured(data.featured || false);
@@ -98,6 +107,8 @@ function StoryFormContent() {
     e.preventDefault();
     setLoading(true);
 
+    const selectedCategoryName = categories.find((c) => c.id === categoryId)?.name || "";
+
     const payload = {
       title,
       slug,
@@ -105,7 +116,8 @@ function StoryFormContent() {
       content,
       cover_image: coverImage,
       author_name: authorName,
-      story_type: storyType,
+      story_type: selectedCategoryName,
+      category_id: categoryId || null,
       project_id: projectId || null,
       status,
       featured,
@@ -240,13 +252,16 @@ function StoryFormContent() {
               <div className="space-y-1.5">
                 <label className="text-sm font-bold text-gray-700">Phân loại bài viết</label>
                 <select
-                  value={storyType}
-                  onChange={(e) => setStoryType(e.target.value)}
+                  value={categoryId}
+                  onChange={(e) => setCategoryId(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-bold text-gray-700 bg-white"
                 >
-                  <option value="Nhật ký hành trình">Nhật ký hành trình</option>
-                  <option value="Góc nhìn thành viên">Góc nhìn thành viên</option>
-                  <option value="Tin tức hoạt động">Tin tức hoạt động</option>
+                  <option value="">Chọn danh mục...</option>
+                  {categories.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.name}
+                    </option>
+                  ))}
                 </select>
               </div>
 

@@ -22,13 +22,21 @@ export default function AdminStories() {
     setLoading(true);
     const { data, error } = await supabase
       .from("stories")
-      .select("id, title, slug, author_name, story_type, status")
+      .select("id, title, slug, author_name, story_type, status, story_categories(name)")
       .order("created_at", { ascending: false });
 
     if (error) {
       console.error("Error loading stories:", error);
     } else {
-      setStories(data || []);
+      const formatted = (data || []).map((s: any) => ({
+        id: s.id,
+        title: s.title,
+        slug: s.slug,
+        author_name: s.author_name,
+        story_type: s.story_categories?.name || s.story_type || "",
+        status: s.status,
+      }));
+      setStories(formatted);
     }
     setLoading(false);
   };

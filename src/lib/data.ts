@@ -75,7 +75,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 export async function getStories(): Promise<Story[]> {
   const { data, error } = await supabase
     .from("stories")
-    .select("*")
+    .select("*, story_categories(name)")
     .eq("status", "published")
     .order("created_at", { ascending: false });
 
@@ -92,7 +92,7 @@ export async function getStories(): Promise<Story[]> {
     content: s.content || "",
     coverImage: s.cover_image || "",
     authorName: s.author_name || "",
-    storyType: s.story_type || "",
+    storyType: s.story_categories?.name || s.story_type || "",
     projectId: s.project_id || undefined,
     featured: s.featured,
     status: s.status,
@@ -105,7 +105,7 @@ export async function getStories(): Promise<Story[]> {
 export async function getStoryBySlug(slug: string): Promise<Story | null> {
   const { data, error } = await supabase
     .from("stories")
-    .select("*")
+    .select("*, story_categories(name)")
     .eq("slug", slug)
     .eq("status", "published")
     .single();
@@ -123,7 +123,7 @@ export async function getStoryBySlug(slug: string): Promise<Story | null> {
     content: data.content || "",
     coverImage: data.cover_image || "",
     authorName: data.author_name || "",
-    storyType: data.story_type || "",
+    storyType: data.story_categories?.name || data.story_type || "",
     projectId: data.project_id || undefined,
     featured: data.featured,
     status: data.status,
