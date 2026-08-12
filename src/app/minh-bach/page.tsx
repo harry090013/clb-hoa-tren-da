@@ -2,6 +2,8 @@ import { getFinancialReports } from "@/lib/data";
 import { ShieldCheck, AlertCircle } from "lucide-react";
 import TransparencyClientList from "./TransparencyClientList";
 
+export const revalidate = 60;
+
 export const metadata = {
   title: "Báo cáo minh bạch",
   description: "Trang công khai thu chi tài chính chi tiết của các dự án thuộc CLB Hoa Trên Đá.",

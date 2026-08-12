@@ -2,6 +2,8 @@ import Link from "next/link";
 import { MapPin, Sparkles } from "lucide-react";
 import { getProjects } from "@/lib/data";
 
+export const revalidate = 60;
+
 export const metadata = {
   title: "Dự án thiện nguyện",
   description: "Danh sách các dự án thiện nguyện đang và đã được triển khai bởi Hoa Trên Đá.",

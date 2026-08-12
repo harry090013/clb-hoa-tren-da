@@ -10,9 +10,10 @@ interface PageProps {
 export async function generateStaticParams() {
   const projectsList = await getProjects();
   return projectsList.map((p) => ({
-    slug: p.slug,
   }));
 }
+
+export const revalidate = 60;
 
 export default async function ProjectDetail({ params }: PageProps) {
   const { slug } = await params;

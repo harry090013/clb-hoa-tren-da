@@ -10,9 +10,10 @@ interface PageProps {
 export async function generateStaticParams() {
   const storiesList = await getStories();
   return storiesList.map((s) => ({
-    slug: s.slug,
   }));
 }
+
+export const revalidate = 60;
 
 export default async function StoryDetail({ params }: PageProps) {
   const { slug } = await params;

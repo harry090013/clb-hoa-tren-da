@@ -1,6 +1,8 @@
 import { getTeamMembers } from "@/lib/data";
 import { Sparkles, CheckCircle } from "lucide-react";
 
+export const revalidate = 60;
+
 export const metadata = {
   title: "Về chúng tôi",
   description: "Tìm hiểu về Câu lạc bộ Thiện nguyện Hoa Trên Đá - Sứ mệnh, giá trị cốt lõi và đội ngũ điều hành.",

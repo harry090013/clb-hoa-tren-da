@@ -1,33 +1,23 @@
 # Project Memory
 
 ## Current Status
-Phase 5 (Volunteer & Partnership Workflow) is fully completed. Public users can submit volunteer/partnership applications from the `/dong-hanh` page, which write to Supabase tables. Admins can audit, filter, update statuses, and save internal notes in dedicated admin dashboards.
+All operational requirements for Vercel deployment and secondary financial security gates are fully completed. Public routes are configured as ISR (1-minute revalidation cache) and the `/admin/transparency` route is protected by a secondary security PIN.
 
 ## Architecture Decisions
 - **Framework**: Next.js App Router with TypeScript.
-- **Styling**: Tailwind CSS v4. Brand colors: Green (`#2F6B2F`) and Hot Pink (`#E91E63`).
-- **Database Client**: `@supabase/supabase-js` SDK.
-- **Image Storage**: `public-images` bucket for media uploads, `receipts` bucket for financial ledger attachments.
-
-## Brand Decisions
-- Keywords: Humanitarian × Youth × Vietnamese.
-- Visual elements: soft borders, warm overlays, clean layout.
+- **Styling**: Tailwind CSS v4.
+- **Dynamic Updates**: Incremental Static Regeneration (ISR) with `export const revalidate = 60;` on public data-driven pages.
+- **Financial Security**: Client-side PIN verification modal wrapped using `FinancialPinGate.tsx` referencing `process.env.NEXT_PUBLIC_FINANCIAL_PIN`.
 
 ## Completed Features
-- Image optimization workflow (resized and converted JPGs to lightweight WebPs, reducing size by ~98%).
-- Homepage Hero section slideshow displaying actual club photos.
-- Secure Admin CMS for Volunteers (`/admin/volunteers`) and Partnerships (`/admin/partnerships`).
-- Anonymous INSERT database policies for registration submissions.
-
-## Pending Features
-- Phase 6 & 7: SEO optimization, metadata tags, speed audit, and production deployment check.
-
-## Known Bugs
-None. Build succeeds.
+- Dynamic background refresh on Vercel (no manual rebuilds needed).
+- Secondary PIN gate prompt blocking read/write access to financial ledger routes.
+- Fully compiling Next.js 16/Turbopack production build.
 
 ## Deployment
 GitHub: Pushed to `harry090013/clb-hoa-tren-da` (branch: `main`)
+Vercel: READY TO DEPLOY
 Supabase: Connected (`uifgalvhyphayivpqvzy`)
 
 ## Last Updated
-2026-08-12 22:19
+2026-08-12 22:38

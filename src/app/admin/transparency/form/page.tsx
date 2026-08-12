@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { ArrowLeft, Save, Plus, Trash2, Loader2, Upload, FileText, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import FinancialPinGate from "@/components/admin/FinancialPinGate";
 
 interface Project {
   id: string;
@@ -548,7 +549,9 @@ export default function TransparencyForm() {
         <Loader2 className="w-8 h-8 text-accent animate-spin" />
       </div>
     }>
-      <TransparencyFormContent />
+      <FinancialPinGate>
+        <TransparencyFormContent />
+      </FinancialPinGate>
     </Suspense>
   );
 }

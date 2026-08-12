@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Calendar, Sparkles } from "lucide-react";
 import { getStories } from "@/lib/data";
 
+export const revalidate = 60;
+
 export const metadata = {
   title: "Hành trình yêu thương",
   description: "Các câu chuyện hành trình, nhật ký tình nguyện của CLB Hoa Trên Đá.",
