@@ -219,8 +219,7 @@ function TransparencyFormContent() {
         if (tx._isDeleted) {
           if (tx.id) dbTxToIdDelete.push(tx.id);
         } else {
-          dbTxToUpsert.push({
-            id: tx.id || undefined, // undefined let Supabase generate UUID
+          const txPayload: any = {
             report_id: activeReportId,
             transaction_date: tx.date,
             transaction_type: tx.type,
@@ -228,7 +227,11 @@ function TransparencyFormContent() {
             amount: tx.amount,
             description: tx.description,
             receipt_url: tx.receipt_url || null,
-          });
+          };
+          if (tx.id) {
+            txPayload.id = tx.id;
+          }
+          dbTxToUpsert.push(txPayload);
         }
       }
 
