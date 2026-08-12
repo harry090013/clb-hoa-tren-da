@@ -1,21 +1,22 @@
 # Project Memory
 
 ## Current Status
-Phase 2 (Supabase Read-only) is fully completed. The project is integrated with Supabase. The local data files have been replaced with a query layer targeting Supabase database tables. Next.js app builds successfully.
+Phase 3 (Admin CMS) is fully completed and integrated. Administrators can authenticate via Supabase Auth and manage website records (Projects, Stories, Team, Partners) using unified admin dashboards and image upload components.
 
 ## Architecture Decisions
 - **Framework**: Next.js App Router with TypeScript.
 - **Styling**: Tailwind CSS v4. Brand colors: Green (`#2F6B2F`) and Hot Pink (`#E91E63`).
-- **Database Client**: `@supabase/supabase-js` configured inside [`src/lib/supabase.ts`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/src/lib/supabase.ts).
-- **Data Access Layer**: Migrated to [`src/lib/data.ts`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/src/lib/data.ts) executing SQL query selections on Supabase.
-- **Route strategy**: Prerendered static pages fetching from Supabase database tables. Dynamic slug routes use `generateStaticParams`.
+- **Database Client**: `@supabase/supabase-js` client SDK.
+- **Data Access Layer**: [`src/lib/data.ts`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/src/lib/data.ts) executing SQL select queries for public pages, and client-side Supabase client for admin CRUD mutations.
+- **Admin Authentication**: Handled client-side via [`AdminGuard.tsx`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/src/components/admin/AdminGuard.tsx) checking active Auth session.
+- **Image Storage**: Uploads target the `public-images` Supabase Storage bucket.
 
 ## Brand Decisions
 - Keywords: Humanitarian × Youth × Vietnamese.
-- Visual elements: soft borders, warm overlays, clearly marked DEMO tags.
+- Visual elements: soft borders, warm overlays, clean layout.
 
 ## Data Model Decisions
-Supabase tables initialized in [`supabase/schema.sql`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/supabase/schema.sql):
+Supabase tables initialized:
 - `projects`
 - `stories`
 - `team_members`
@@ -23,16 +24,18 @@ Supabase tables initialized in [`supabase/schema.sql`](file:///f:/Dev/Hoa-Tren-D
 - `impact_stats`
 - `financial_reports`
 - `financial_transactions`
+- `profiles` (User profile mapping role authorizations)
 
 ## Completed Features
-- Full Supabase environment setup with `.env.local`.
-- Tightly-coupled relational fetch queries for transparency accounting (joining projects & transactions).
-- Seamless fallback rendering (`[]` or `null`) when database schema is not yet cached.
-- Automated sitemaps & robots routes.
+- Dynamic Admin dashboard with entity statistics counters.
+- Slug auto-generation from titles in projects & stories forms.
+- Supabase storage upload helper returning public URL paths.
+- Modal-driven CRUD overlays for Team and Partner lists.
+- Full git synchronization and compilation build validation.
 
 ## Pending Features
-- Phase 3: Auth + Admin CMS (Admin login, dashboard, content CRUD).
 - Phase 4: Full Transparency ledger (database writes, auditing & receipt uploads).
+- Phase 5: Volunteer & Partnership registrations dashboard.
 
 ## Known Bugs
 None. Build succeeds.
@@ -46,4 +49,4 @@ Vercel: NOT PROVIDED
 Supabase: Connected (`uifgalvhyphayivpqvzy`)
 
 ## Last Updated
-2026-08-12 21:41
+2026-08-12 21:54

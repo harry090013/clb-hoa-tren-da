@@ -175,3 +175,26 @@ INSERT INTO financial_transactions (report_id, transaction_date, transaction_typ
 ('73c2a0fe-aa58-4bb9-ba54-b6cd78a9c3d4', '2026-04-15', 'expense', 'Mua sách vở', 18500000, 'Thanh toán hóa đơn sách từ NXB Kim Đồng', '#'),
 ('73c2a0fe-aa58-4bb9-ba54-b6cd78a9c3d4', '2026-04-20', 'expense', 'Thi công kệ sách', 8000000, 'Chi phí mua gỗ và công lắp ráp tủ sách tại chỗ', '#'),
 ('73c2a0fe-aa58-4bb9-ba54-b6cd78a9c3d4', '2026-04-25', 'expense', 'Vận chuyển', 4350000, 'Chi phí thuê xe vận chuyển hàng lên Yên Bái', '#');
+
+-- Profiles Table
+CREATE TABLE profiles (
+  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  full_name TEXT,
+  role TEXT NOT NULL DEFAULT 'editor',
+  active BOOLEAN NOT NULL DEFAULT true,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Trigger to automatically create a profile record when a new user signs up
+CREATE OR REPLACE FUNCTION handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO public.profiles (id, full_name, role, active)
+  VALUES (new.id, new.raw_user_meta_data->>'full_name', 'admin', true);
+  RETURN new;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE OR REPLACE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION handle_new_user();
