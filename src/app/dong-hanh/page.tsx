@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Heart, HelpCircle, Send, CheckCircle2 } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+import { Sparkles, Heart, HelpCircle, Send, CheckCircle2, Loader2 } from "lucide-react";
 
 export default function PartnerVolunteer() {
   const [formType, setFormType] = useState<"volunteer" | "partner">("volunteer");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   // Form states
   const [fullName, setFullName] = useState("");
@@ -15,10 +18,43 @@ export default function PartnerVolunteer() {
   const [orgName, setOrgName] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate submission
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMsg("");
+
+    try {
+      if (formType === "volunteer") {
+        const { error } = await supabase.from("volunteer_applications").insert([
+          {
+            full_name: fullName,
+            email,
+            phone,
+            motivation,
+            status: "new",
+          },
+        ]);
+        if (error) throw error;
+      } else {
+        const { error } = await supabase.from("partnership_requests").insert([
+          {
+            organization_name: orgName,
+            contact_name: fullName,
+            email,
+            phone,
+            message,
+            status: "new",
+          },
+        ]);
+        if (error) throw error;
+      }
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      setErrorMsg(err.message || "Gửi đăng ký thất bại. Vui lòng thử lại sau.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleReset = () => {
@@ -29,6 +65,7 @@ export default function PartnerVolunteer() {
     setOrgName("");
     setMessage("");
     setSubmitted(false);
+    setErrorMsg("");
   };
 
   return (
@@ -96,6 +133,11 @@ export default function PartnerVolunteer() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              {errorMsg && (
+                <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-bold">
+                  {errorMsg}
+                </div>
+              )}
               {formType === "volunteer" ? (
                 <>
                   <div className="text-center space-y-1 mb-4">
@@ -212,10 +254,20 @@ export default function PartnerVolunteer() {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-bold text-white bg-accent hover:bg-accent-dark shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                disabled={loading}
+                className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-bold text-white bg-accent hover:bg-accent-dark shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50"
               >
-                Gửi thông tin đăng ký
-                <Send className="w-4 h-4 ml-2" />
+                {loading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                    Đang gửi thông tin...
+                  </>
+                ) : (
+                  <>
+                    Gửi thông tin đăng ký
+                    <Send className="w-4 h-4 ml-2" />
+                  </>
+                )}
               </button>
             </form>
           )}

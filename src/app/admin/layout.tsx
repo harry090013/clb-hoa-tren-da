@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import AdminGuard from "@/components/admin/AdminGuard";
 import { supabase } from "@/lib/supabase";
-import { Folder, BookOpen, Users, HelpCircle, LogOut, Home, Sparkles, ShieldCheck } from "lucide-react";
+import { Folder, BookOpen, Users, HelpCircle, LogOut, Home, Sparkles, ShieldCheck, UserCheck, Handshake } from "lucide-react";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -25,8 +25,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { name: "Dự án", href: "/admin/projects", icon: Folder },
     { name: "Hành trình", href: "/admin/stories", icon: BookOpen },
     { name: "Thành viên", href: "/admin/team", icon: Users },
-    { name: "Đối tác", href: "/admin/partners", icon: HelpCircle },
+    { name: "Đối tác hiển thị", href: "/admin/partners", icon: HelpCircle },
     { name: "Minh bạch tài chính", href: "/admin/transparency", icon: ShieldCheck },
+    { name: "Đăng ký tình nguyện", href: "/admin/volunteers", icon: UserCheck },
+    { name: "Đăng ký đối tác", href: "/admin/partnerships", icon: Handshake },
   ];
 
   return (
