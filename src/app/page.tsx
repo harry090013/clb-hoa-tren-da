@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Sparkles, Heart, Users, MapPin, ChevronRight, Calendar, ArrowRight, ShieldCheck } from "lucide-react";
 import { getProjects, getStories, getImpactStats, getPartners } from "@/lib/data";
+import HeroSlideshow from "@/components/home/HeroSlideshow";
 
 export default async function Home() {
   const projectsList = await getProjects();
@@ -14,35 +15,43 @@ export default async function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50/80 via-white to-pink-50/30 py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-green-50/80 via-white to-pink-50/30 py-16 lg:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider text-primary bg-primary/10 border border-primary/20">
-              <Sparkles className="w-3.5 h-3.5 text-accent" />
-              CÂU LẠC BỘ THIỆN NGUYỆN HOA TRÊN ĐÁ
-            </span>
-            <h1 className="text-4xl sm:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Từ đá nở hoa <br />
-              <span className="text-accent">Từ tâm lan tỏa</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed font-medium max-w-2xl">
-              Kết nối những trái tim nhiệt huyết, cùng sẻ chia yêu thương và đồng hành với trẻ em, người dân cùng những hoàn cảnh còn nhiều khó khăn.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link
-                href="/dong-hanh"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-base font-bold text-white bg-accent hover:bg-accent-dark shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <Heart className="w-5 h-5 mr-2 fill-current" />
-                Đồng hành cùng chúng tôi
-              </Link>
-              <Link
-                href="/hanh-trinh"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-base font-bold text-primary bg-white hover:bg-gray-50 border border-gray-200 shadow-sm hover:shadow transition-all duration-200"
-              >
-                Khám phá hành trình
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left text column */}
+            <div className="lg:col-span-7 space-y-6">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider text-primary bg-primary/10 border border-primary/20">
+                <Sparkles className="w-3.5 h-3.5 text-accent" />
+                CÂU LẠC BỘ THIỆN NGUYỆN HOA TRÊN ĐÁ
+              </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                Từ đá nở hoa <br />
+                <span className="text-accent">Từ tâm lan tỏa</span>
+              </h1>
+              <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                Kết nối những trái tim nhiệt huyết, cùng sẻ chia yêu thương và đồng hành với trẻ em, người dân cùng những hoàn cảnh còn nhiều khó khăn.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  href="/dong-hanh"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-base font-bold text-white bg-accent hover:bg-accent-dark shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <Heart className="w-5 h-5 mr-2 fill-current" />
+                  Đồng hành cùng chúng tôi
+                </Link>
+                <Link
+                  href="/hanh-trinh"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-base font-bold text-primary bg-white hover:bg-gray-50 border border-gray-200 shadow-sm hover:shadow transition-all duration-200"
+                >
+                  Khám phá hành trình
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </div>
+            </div>
+            
+            {/* Right slideshow column */}
+            <div className="lg:col-span-5 w-full">
+              <HeroSlideshow />
             </div>
           </div>
         </div>
