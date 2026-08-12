@@ -1,4 +1,4 @@
-import { stories } from "@/data/stories";
+import { getStories, getStoryBySlug } from "@/lib/data";
 import { notFound } from "next/navigation";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -8,14 +8,15 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return stories.map((s) => ({
+  const storiesList = await getStories();
+  return storiesList.map((s) => ({
     slug: s.slug,
   }));
 }
 
 export default async function StoryDetail({ params }: PageProps) {
   const { slug } = await params;
-  const story = stories.find((s) => s.slug === slug);
+  const story = await getStoryBySlug(slug);
 
   if (!story) {
     notFound();

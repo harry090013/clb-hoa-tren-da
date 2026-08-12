@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { Sparkles, Heart, Users, MapPin, ChevronRight, Calendar, ArrowRight, ShieldCheck } from "lucide-react";
-import { projects } from "@/data/projects";
-import { stories } from "@/data/stories";
-import { impactStats } from "@/data/impact";
-import { partners } from "@/data/partners";
+import { getProjects, getStories, getImpactStats, getPartners } from "@/lib/data";
 
-export default function Home() {
-  const featuredProjects = projects.filter(p => p.featured);
-  const recentStories = stories.slice(0, 2);
+export default async function Home() {
+  const projectsList = await getProjects();
+  const storiesList = await getStories();
+  const stats = await getImpactStats();
+  const partnersList = await getPartners();
+
+  const featuredProjects = projectsList.filter(p => p.featured);
+  const recentStories = storiesList.slice(0, 2);
 
   return (
     <div className="flex flex-col w-full">
@@ -108,12 +110,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center max-w-xl mx-auto">
             <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800 border border-yellow-200 mb-2">
-              DỮ LIỆU THỬ NGHIỆM (DEMO)
+              DỮ LIỆU ĐƯỢC TẢI TỪ SUPABASE (DEMO)
             </span>
             <h2 className="text-3xl font-extrabold text-primary">Những Con Số Ấn Tượng</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {impactStats.map((stat) => (
+            {stats.map((stat) => (
               <div key={stat.id} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
                 <p className="text-4xl sm:text-5xl font-extrabold text-accent">
                   {stat.value}
@@ -193,7 +195,7 @@ export default function Home() {
                       </div>
                       <div className="flex justify-between text-xs text-gray-500 font-medium">
                         <span>Mục tiêu: {project.targetAmount.toLocaleString("vi-VN")}đ</span>
-                        <span className="font-bold text-accent">Demo</span>
+                        <span className="font-bold text-accent">Supabase Data</span>
                       </div>
                     </div>
                   )}
@@ -310,7 +312,7 @@ export default function Home() {
             Đồng hành cùng dự án
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-75">
-            {partners.map((partner) => (
+            {partnersList.map((partner) => (
               <div key={partner.id} className="flex flex-col items-center justify-center text-center max-w-xs">
                 <span className="text-sm font-bold text-primary">{partner.name}</span>
                 <span className="text-xs text-gray-500">{partner.partnerType}</span>

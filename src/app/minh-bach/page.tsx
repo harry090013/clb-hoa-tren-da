@@ -1,12 +1,14 @@
-import { financialReports } from "@/data/transparency";
-import { ShieldCheck, Sparkles, AlertCircle, FileText, ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { getFinancialReports } from "@/lib/data";
+import { ShieldCheck, AlertCircle, FileText, ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 export const metadata = {
   title: "Báo cáo minh bạch",
   description: "Trang công khai thu chi tài chính chi tiết của các dự án thuộc CLB Hoa Trên Đá.",
 };
 
-export default function Transparency() {
+export default async function Transparency() {
+  const reports = await getFinancialReports();
+
   return (
     <div className="bg-white py-12 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -37,7 +39,7 @@ export default function Transparency() {
 
         {/* Financial reports section */}
         <div className="space-y-12">
-          {financialReports.map((report) => (
+          {reports.map((report) => (
             <div
               key={report.id}
               className="bg-surface rounded-3xl border border-gray-100 p-6 sm:p-10 space-y-8"
@@ -45,14 +47,14 @@ export default function Transparency() {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-200/60 pb-6">
                 <div className="space-y-1">
                   <span className="text-xs font-bold text-accent uppercase tracking-wider">
-                    Dự án: {report.projectTitle} (Năm {report.reportYear})
+                    Dự án: {report.projectTitle || "Dự án chung"} (Năm {report.reportYear})
                   </span>
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {report.title}
                   </h2>
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800 border border-yellow-200">
-                  DỮ LIỆU THỬ NGHIỆM (DEMO)
+                  DỮ LIỆU ĐƯỢC TẢI TỪ SUPABASE
                 </div>
               </div>
 

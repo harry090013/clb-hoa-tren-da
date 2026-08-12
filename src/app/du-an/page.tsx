@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { MapPin, Sparkles } from "lucide-react";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/lib/data";
 
 export const metadata = {
   title: "Dự án thiện nguyện",
   description: "Danh sách các dự án thiện nguyện đang và đã được triển khai bởi Hoa Trên Đá.",
 };
 
-export default function Projects() {
+export default async function Projects() {
+  const projectsList = await getProjects();
+
   return (
     <div className="bg-white py-12 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -26,7 +28,7 @@ export default function Projects() {
 
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projectsList.map((project) => (
             <div
               key={project.id}
               className="bg-surface rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col h-full"
@@ -81,7 +83,7 @@ export default function Projects() {
                     </div>
                     <div className="flex justify-between text-xs text-gray-500 font-medium">
                       <span>Mục tiêu: {project.targetAmount.toLocaleString("vi-VN")}đ</span>
-                      <span className="font-bold text-accent">Demo Data</span>
+                      <span className="font-bold text-accent">Supabase Data</span>
                     </div>
                   </div>
                 )}

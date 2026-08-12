@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { Calendar, Sparkles } from "lucide-react";
-import { stories } from "@/data/stories";
+import { getStories } from "@/lib/data";
 
 export const metadata = {
   title: "Hành trình yêu thương",
   description: "Các câu chuyện hành trình, nhật ký tình nguyện của CLB Hoa Trên Đá.",
 };
 
-export default function Stories() {
+export default async function Stories() {
+  const storiesList = await getStories();
+
   return (
     <div className="bg-white py-12 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -26,7 +28,7 @@ export default function Stories() {
 
         {/* Stories list */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {stories.map((story) => (
+          {storiesList.map((story) => (
             <div
               key={story.id}
               className="bg-surface rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col sm:flex-row"

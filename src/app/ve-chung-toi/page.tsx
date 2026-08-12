@@ -1,12 +1,14 @@
-import { teamMembers } from "@/data/team";
-import { Sparkles, CheckCircle, Shield } from "lucide-react";
+import { getTeamMembers } from "@/lib/data";
+import { Sparkles, CheckCircle } from "lucide-react";
 
 export const metadata = {
   title: "Về chúng tôi",
   description: "Tìm hiểu về Câu lạc bộ Thiện nguyện Hoa Trên Đá - Sứ mệnh, giá trị cốt lõi và đội ngũ điều hành.",
 };
 
-export default function About() {
+export default async function About() {
+  const team = await getTeamMembers();
+
   const values = [
     {
       title: "Yêu thương",
@@ -55,7 +57,7 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((value, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-50 shadow-sm space-y-2 flex flex-col justify-between">
+              <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-2 flex flex-col justify-between">
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2 text-primary">
                     <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
@@ -75,7 +77,7 @@ export default function About() {
             <p className="text-gray-500 text-sm">Những con người nhiệt huyết điều hành hoạt động của Hoa Trên Đá.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member) => (
+            {team.map((member) => (
               <div
                 key={member.id}
                 className="bg-surface border border-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col items-center p-6 text-center space-y-4"

@@ -1,4 +1,4 @@
-import { projects } from "@/data/projects";
+import { getProjects, getProjectBySlug } from "@/lib/data";
 import { notFound } from "next/navigation";
 import { MapPin, Calendar, CheckCircle } from "lucide-react";
 import Link from "next/link";
@@ -8,14 +8,15 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return projects.map((p) => ({
+  const projectsList = await getProjects();
+  return projectsList.map((p) => ({
     slug: p.slug,
   }));
 }
 
 export default async function ProjectDetail({ params }: PageProps) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -63,7 +64,7 @@ export default async function ProjectDetail({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Donation Progress (if applicable) */}
+        {/* Donation Progress */}
         {project.targetAmount && (
           <div className="bg-surface border border-gray-100 p-8 rounded-3xl space-y-4">
             <div className="flex justify-between items-center text-sm font-bold text-gray-700">
@@ -86,7 +87,7 @@ export default async function ProjectDetail({ params }: PageProps) {
                 </p>
               </div>
               <div className="bg-white p-4 rounded-xl border border-gray-100">
-                <p className="text-xs font-bold text-gray-500 uppercase">Đã tiếp nhận (Demo)</p>
+                <p className="text-xs font-bold text-gray-500 uppercase">Đã tiếp nhận (Supabase)</p>
                 <p className="text-lg font-bold text-accent mt-1">
                   {(project.receivedAmount || 0).toLocaleString("vi-VN")}đ
                 </p>
