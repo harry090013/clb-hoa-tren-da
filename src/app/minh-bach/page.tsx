@@ -1,5 +1,6 @@
 import { getFinancialReports } from "@/lib/data";
-import { ShieldCheck, AlertCircle, FileText, ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ShieldCheck, AlertCircle } from "lucide-react";
+import TransparencyClientList from "./TransparencyClientList";
 
 export const metadata = {
   title: "Báo cáo minh bạch",
@@ -7,6 +8,7 @@ export const metadata = {
 };
 
 export default async function Transparency() {
+  // Fetch data on server
   const reports = await getFinancialReports();
 
   return (
@@ -37,132 +39,8 @@ export default async function Transparency() {
           </div>
         </div>
 
-        {/* Financial reports section */}
-        <div className="space-y-12">
-          {reports.map((report) => (
-            <div
-              key={report.id}
-              className="bg-surface rounded-3xl border border-gray-100 p-6 sm:p-10 space-y-8"
-            >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-200/60 pb-6">
-                <div className="space-y-1">
-                  <span className="text-xs font-bold text-accent uppercase tracking-wider">
-                    Dự án: {report.projectTitle || "Dự án chung"} (Năm {report.reportYear})
-                  </span>
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
-                    {report.title}
-                  </h2>
-                </div>
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800 border border-yellow-200">
-                  DỮ LIỆU ĐƯỢC TẢI TỪ SUPABASE
-                </div>
-              </div>
-
-              {/* Stats overview */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-bold text-gray-500 uppercase">Tổng tiếp nhận</p>
-                    <p className="text-2xl font-extrabold text-primary mt-1">
-                      {report.totalReceived.toLocaleString("vi-VN")}đ
-                    </p>
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-primary">
-                    <ArrowDownRight className="w-5 h-5" />
-                  </div>
-                </div>
-
-                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-bold text-gray-500 uppercase">Tổng chi tiêu</p>
-                    <p className="text-2xl font-extrabold text-accent mt-1">
-                      {report.totalSpent.toLocaleString("vi-VN")}đ
-                    </p>
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center text-accent">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </div>
-                </div>
-
-                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-bold text-gray-500 uppercase">Số dư hiện tại</p>
-                    <p className="text-2xl font-extrabold text-gray-900 mt-1">
-                      {report.remainingBalance.toLocaleString("vi-VN")}đ
-                    </p>
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                </div>
-              </div>
-
-              {report.publicNote && (
-                <p className="text-sm font-semibold text-gray-600 italic bg-white p-4 rounded-xl border border-gray-100">
-                  * Lưu ý: {report.publicNote}
-                </p>
-              )}
-
-              {/* Transactions table */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-bold text-primary">Danh sách giao dịch chi tiết</h3>
-                <div className="overflow-x-auto border border-gray-100 rounded-2xl shadow-sm bg-white">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="px-6 py-3.5 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                          Ngày
-                        </th>
-                        <th className="px-6 py-3.5 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                          Loại
-                        </th>
-                        <th className="px-6 py-3.5 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                          Danh mục
-                        </th>
-                        <th className="px-6 py-3.5 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                          Số tiền
-                        </th>
-                        <th className="px-6 py-3.5 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                          Nội dung diễn giải
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-100 text-sm">
-                      {report.transactions.map((tx) => (
-                        <tr key={tx.id} className="hover:bg-gray-50/50">
-                          <td className="px-6 py-4 whitespace-nowrap text-gray-600 font-medium">
-                            {tx.date}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <span className={`inline-flex px-2 py-1 rounded-full text-xs font-bold ${
-                              tx.type === "income"
-                                ? "bg-green-50 text-green-700"
-                                : "bg-pink-50 text-pink-700"
-                            }`}>
-                              {tx.type === "income" ? "Thu" : "Chi"}
-                            </span>
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-gray-900 font-semibold">
-                            {tx.category}
-                          </td>
-                          <td className={`px-6 py-4 whitespace-nowrap font-bold ${
-                            tx.type === "income" ? "text-primary" : "text-accent"
-                          }`}>
-                            {tx.type === "income" ? "+" : "-"}
-                            {tx.amount.toLocaleString("vi-VN")}đ
-                          </td>
-                          <td className="px-6 py-4 text-gray-600">
-                            {tx.description}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Client-side interactive list of reports */}
+        <TransparencyClientList initialReports={reports} />
       </div>
     </div>
   );

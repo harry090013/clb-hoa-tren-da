@@ -1,15 +1,14 @@
 # Project Memory
 
 ## Current Status
-Phase 3 (Admin CMS) is fully completed and integrated. Administrators can authenticate via Supabase Auth and manage website records (Projects, Stories, Team, Partners) using unified admin dashboards and image upload components.
+Phase 4 (Transparency Platform) is fully completed and integrated. Administrators can manage financial reports and transaction entries in the Admin CMS, upload receipt images to the public `receipts` Supabase Storage bucket, and public users can interactively search, filter, and preview receipts.
 
 ## Architecture Decisions
 - **Framework**: Next.js App Router with TypeScript.
 - **Styling**: Tailwind CSS v4. Brand colors: Green (`#2F6B2F`) and Hot Pink (`#E91E63`).
-- **Database Client**: `@supabase/supabase-js` client SDK.
+- **Database Client**: `@supabase/supabase-js` SDK.
 - **Data Access Layer**: [`src/lib/data.ts`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/src/lib/data.ts) executing SQL select queries for public pages, and client-side Supabase client for admin CRUD mutations.
-- **Admin Authentication**: Handled client-side via [`AdminGuard.tsx`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/src/components/admin/AdminGuard.tsx) checking active Auth session.
-- **Image Storage**: Uploads target the `public-images` Supabase Storage bucket.
+- **Image Storage**: `public-images` bucket for team/partners/project cover images, and `receipts` bucket for financial ledger attachments.
 
 ## Brand Decisions
 - Keywords: Humanitarian × Youth × Vietnamese.
@@ -24,17 +23,15 @@ Supabase tables initialized:
 - `impact_stats`
 - `financial_reports`
 - `financial_transactions`
-- `profiles` (User profile mapping role authorizations)
+- `profiles`
 
 ## Completed Features
-- Dynamic Admin dashboard with entity statistics counters.
-- Slug auto-generation from titles in projects & stories forms.
-- Supabase storage upload helper returning public URL paths.
-- Modal-driven CRUD overlays for Team and Partner lists.
-- Full git synchronization and compilation build validation.
+- Transaction search bar and tab filtering on the public `/minh-bach` page.
+- Dialog popups for checking transaction receipts.
+- Interactive transaction ledger sub-form on the Admin CMS panel.
+- Cascading transaction deletes from the database.
 
 ## Pending Features
-- Phase 4: Full Transparency ledger (database writes, auditing & receipt uploads).
 - Phase 5: Volunteer & Partnership registrations dashboard.
 
 ## Known Bugs
@@ -49,4 +46,4 @@ Vercel: NOT PROVIDED
 Supabase: Connected (`uifgalvhyphayivpqvzy`)
 
 ## Last Updated
-2026-08-12 21:54
+2026-08-12 21:59
