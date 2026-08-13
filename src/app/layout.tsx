@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import MaintenanceGate from "@/components/layout/MaintenanceGate";
 
 const beVietnamPro = Be_Vietnam_Pro({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -36,9 +35,7 @@ export default function RootLayout({
   return (
     <html lang="vi" className={`${beVietnamPro.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col font-sans antialiased bg-surface text-foreground selection:bg-accent/25 selection:text-accent-dark">
-        <Header />
-        <main className="flex-grow flex flex-col">{children}</main>
-        <Footer />
+        <MaintenanceGate>{children}</MaintenanceGate>
       </body>
     </html>
   );
