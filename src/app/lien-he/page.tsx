@@ -65,7 +65,7 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-xs font-bold text-gray-400 uppercase">Địa chỉ</p>
-                    <p className="font-semibold text-base text-gray-500">Chưa cung cấp chính thức (Placeholder - DEMO)</p>
+                    <p className="font-semibold text-base text-gray-900">Xóm Trại, Thôn Quế Xuân, Xã Xuân Phú, TP Đà Nẵng</p>
                   </div>
                 </div>
               </div>
