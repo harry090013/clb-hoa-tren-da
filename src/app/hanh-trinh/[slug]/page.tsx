@@ -2,6 +2,7 @@ import { getStories, getStoryBySlug } from "@/lib/data";
 import { notFound } from "next/navigation";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import RichTextRenderer from "@/components/layout/RichTextRenderer";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -10,6 +11,7 @@ interface PageProps {
 export async function generateStaticParams() {
   const storiesList = await getStories();
   return storiesList.map((s) => ({
+    slug: s.slug,
   }));
 }
 
@@ -64,11 +66,7 @@ export default async function StoryDetail({ params }: PageProps) {
         </div>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed font-sans space-y-6">
-          {story.content.split("\n\n").map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
+        <RichTextRenderer content={story.content} />
       </div>
     </div>
   );
