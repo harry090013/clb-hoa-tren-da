@@ -34,8 +34,8 @@ export default function Header() {
                 <span className="text-lg font-bold text-primary leading-tight tracking-wide font-sans">
                   HOA TRÊN ĐÁ
                 </span>
-                <span className="text-xs text-gray-500 font-medium tracking-tight">
-                  Từ tâm lan tỏa
+                <span className="text-[11px] sm:text-xs text-gray-500 font-medium tracking-tight">
+                  Từ đá nở hoa, từ tâm lan tỏa
                 </span>
               </div>
             </Link>
