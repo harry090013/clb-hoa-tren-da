@@ -122,7 +122,7 @@ export default function PartnerVolunteer() {
           <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
             Đồng Hành Cùng Hoa Trên Đá
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium text-justify">
             Hãy cùng chúng tôi viết tiếp những chặng đường nhân ái. Dù là cá nhân tình nguyện viên hay tổ chức doanh nghiệp, sự hiện diện của bạn đều là nguồn động lực to lớn cho các hoàn cảnh khó khăn.
           </p>
         </div>
@@ -355,7 +355,7 @@ export default function PartnerVolunteer() {
 
         {/* Direct Contact Banner */}
         <div className="bg-surface rounded-2xl border border-gray-200/80 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 max-w-2xl mx-auto">
-          <div className="space-y-1 text-center sm:text-left">
+          <div className="space-y-1 text-center">
             <h3 className="font-bold text-gray-900 text-base">Liên hệ trực tiếp Ban Điều Hành</h3>
             <p className="text-xs text-gray-500 font-medium">Chúng tôi sẵn sàng lắng nghe và phản hồi mọi câu hỏi của bạn.</p>
           </div>

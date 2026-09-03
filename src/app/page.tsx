@@ -30,7 +30,7 @@ export default async function Home() {
                 Từ đá nở hoa <br />
                 <span className="text-accent">Từ tâm lan tỏa</span>
               </h1>
-              <p className="text-lg text-gray-600 leading-relaxed font-medium">
+              <p className="text-lg text-gray-600 leading-relaxed font-medium text-justify">
                 Kết nối những trái tim nhiệt huyết, cùng sẻ chia yêu thương và đồng hành với trẻ em, người dân cùng những hoàn cảnh còn nhiều khó khăn.
               </p>
               <div className="flex flex-wrap gap-4 pt-2">
@@ -79,7 +79,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <h2 className="text-3xl font-extrabold text-primary">Sứ Mệnh Của Chúng Tôi</h2>
-            <p className="text-gray-600 font-medium">
+            <p className="text-gray-600 font-medium text-center">
               Kiến tạo những thay đổi thiết thực và lâu dài cho cộng đồng thông qua hành động tử tế và sự kết nối bền vững.
             </p>
           </div>
@@ -90,7 +90,7 @@ export default async function Home() {
                 <Heart className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-gray-900">Chung tay vì cộng đồng</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
                 Đồng hành cùng bệnh nhân nghèo, học sinh hiếu học và bà con vùng cao qua các chương trình phát cháo bệnh viện, thắp sáng bản làng và hỗ trợ khẩn cấp.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default async function Home() {
                 <Users className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-gray-900">Phát triển con người</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
                 Tạo dựng môi trường rèn luyện thực tế cho các bạn trẻ nâng cao kỹ năng mềm, tinh thần trách nhiệm và lòng nhân ái.
               </p>
             </div>
@@ -108,7 +108,7 @@ export default async function Home() {
                 <Sparkles className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold text-gray-900">Kết nối & Lan tỏa</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed text-justify">
                 Là cầu nối đáng tin cậy giữa các nhà hảo tâm và các hoàn cảnh khó khăn cần giúp đỡ trên khắp đất nước.
               </p>
             </div>
@@ -146,7 +146,7 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-2">
               <h2 className="text-3xl font-extrabold text-primary">Dự Án Thiện Nguyện</h2>
-              <p className="text-gray-600 text-sm max-w-xl">
+              <p className="text-gray-600 text-sm max-w-xl text-justify">
                 Cùng góp sức mang lại nụ cười và tương lai tốt đẹp hơn cho các em nhỏ và đồng bào vùng cao.
               </p>
             </div>
@@ -163,7 +163,7 @@ export default async function Home() {
             <div className="bg-surface rounded-3xl border border-dashed border-gray-200/80 p-12 text-center max-w-2xl mx-auto space-y-3">
               <Sparkles className="w-8 h-8 text-accent mx-auto" />
               <h3 className="text-lg font-bold text-gray-900">Các chiến dịch mới đang được lên kế hoạch</h3>
-              <p className="text-sm text-gray-500 font-medium leading-relaxed">
+              <p className="text-sm text-gray-500 font-medium leading-relaxed text-center">
                 CLB Hoa Trên Đá đang tiến hành khảo sát thực địa để chuẩn bị phát động các dự án thiện nguyện tiếp theo. Thông tin và mục tiêu gây quỹ minh bạch sẽ được cập nhật tại đây và trên Fanpage chính thức.
               </p>
             </div>
@@ -195,7 +195,7 @@ export default async function Home() {
                       <h3 className="text-xl font-bold text-gray-900 leading-snug">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 text-sm line-clamp-3">
+                      <p className="text-gray-600 text-sm line-clamp-3 text-justify">
                         {project.excerpt}
                       </p>
                     </div>
@@ -240,7 +240,7 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-2">
               <h2 className="text-3xl font-extrabold text-primary">Nhật Ký Hành Trình</h2>
-              <p className="text-gray-600 text-sm max-w-xl">
+              <p className="text-gray-600 text-sm max-w-xl text-justify">
                 Những chia sẻ đầy cảm xúc của các tình nguyện viên trên mọi miền đất nước.
               </p>
             </div>
@@ -277,7 +277,7 @@ export default async function Home() {
                     <h3 className="text-lg font-bold text-gray-900 leading-snug">
                       {story.title}
                     </h3>
-                    <p className="text-gray-600 text-xs line-clamp-3">
+                    <p className="text-gray-600 text-xs line-clamp-3 text-justify">
                       {story.excerpt}
                     </p>
                   </div>
@@ -310,7 +310,7 @@ export default async function Home() {
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 Hoạt Động Tài Chính Minh Bạch
               </h2>
-              <p className="text-gray-200 text-sm leading-relaxed">
+              <p className="text-gray-200 text-sm leading-relaxed text-justify">
                 Tại Hoa Trên Đá, chúng tôi cam kết công khai 100% dòng tiền tiếp nhận và sử dụng. Mọi đóng góp của bạn đều được ghi nhận cụ thể bằng biên lai, chứng từ thu chi rõ ràng cho từng chiến dịch.
               </p>
             </div>
@@ -349,7 +349,7 @@ export default async function Home() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary">
             Bạn Sẵn Sàng Đồng Hành Cùng Chúng Tôi?
           </h2>
-          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto text-justify">
             Mọi đóng góp về sức lực, thời gian hay hiện vật đều là những viên gạch quý báu xây dựng nên tương lai rực rỡ hơn cho trẻ em nghèo vùng cao. Hãy gia nhập đội ngũ tình nguyện viên ngay hôm nay!
           </p>
           <div className="pt-4">

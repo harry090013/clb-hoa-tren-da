@@ -33,7 +33,7 @@ export default function Contact() {
           <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
             Liên Hệ Với Hoa Trên Đá
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed font-medium">
+          <p className="text-lg text-gray-600 leading-relaxed font-medium text-justify">
             Mọi thắc mắc, phản hồi hoặc đề xuất hỗ trợ thiện nguyện, xin vui lòng gửi tin nhắn hoặc liên hệ trực tiếp với chúng tôi qua các kênh thông tin dưới đây.
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function Contact() {
           <div className="space-y-8 bg-surface rounded-3xl p-8 sm:p-12 border border-gray-100 flex flex-col justify-between">
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-gray-900">Thông tin liên lạc</h2>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed text-justify">
                 Ban truyền thông và đối ngoại sẽ tiếp nhận thông tin và phản hồi nhanh chóng nhất.
               </p>
               <div className="space-y-4">

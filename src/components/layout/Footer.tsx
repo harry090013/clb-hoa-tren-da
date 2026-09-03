@@ -21,7 +21,7 @@ export default function Footer() {
             <p className="text-sm text-gray-200 italic max-w-sm">
               "Từ đá nở hoa – Từ tâm lan tỏa"
             </p>
-            <p className="text-xs text-gray-300 max-w-sm">
+            <p className="text-xs text-gray-300 max-w-sm text-justify">
               Có những bông hoa không lớn lên trong khu vườn màu mỡ mà vẫn vươn mình mạnh mẽ giữa những vách đá khô cằn.
             </p>
           </div>

@@ -100,7 +100,7 @@ export default async function ProjectDetail({ params }: PageProps) {
         {/* Content */}
         <div className="prose max-w-none text-gray-700 leading-relaxed font-sans space-y-6">
           {project.content.split("\n\n").map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index} className="text-justify leading-relaxed">{paragraph}</p>
           ))}
         </div>
 
@@ -111,7 +111,7 @@ export default async function ProjectDetail({ params }: PageProps) {
               <CheckCircle className="w-5 h-5 text-accent" />
               Đăng ký tham gia tình nguyện viên
             </h3>
-            <p className="text-xs text-gray-600 max-w-md">
+            <p className="text-xs text-gray-600 max-w-md text-justify">
               Dự án đang thu hút rất nhiều sự quan tâm từ cộng đồng. Hãy đăng ký tham gia đóng góp công sức trực tiếp tại địa bàn.
             </p>
           </div>

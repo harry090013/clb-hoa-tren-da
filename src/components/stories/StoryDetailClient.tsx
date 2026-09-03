@@ -607,7 +607,7 @@ export default function StoryDetailClient({
             </div>
 
             {/* 4. Author Box */}
-            <div className="flex flex-col sm:flex-row gap-5 p-6 rounded-2xl border border-gray-200/80 bg-surface items-center sm:items-start text-center sm:text-left mt-8 shadow-sm">
+            <div className="flex flex-col sm:flex-row gap-5 p-6 rounded-2xl border border-gray-200/80 bg-surface items-center sm:items-start mt-8 shadow-sm">
               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30 shrink-0 bg-gray-100 shadow-sm">
                 <img
                   src={authorInfo.avatar}
@@ -624,7 +624,7 @@ export default function StoryDetailClient({
                     {authorInfo.role}
                   </span>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                <p className="text-xs text-gray-600 leading-relaxed font-medium text-justify">
                   {authorInfo.bio}
                 </p>
               </div>
@@ -755,7 +755,7 @@ export default function StoryDetailClient({
                           {cmt.createdAt}
                         </span>
                       </div>
-                      <p className="text-xs sm:text-sm text-gray-700 leading-relaxed pl-9">
+                      <p className="text-xs sm:text-sm text-gray-700 leading-relaxed pl-9 text-justify">
                         {cmt.content}
                       </p>
                     </div>

@@ -68,7 +68,7 @@ export default function Activities() {
           <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
             Mảng Hoạt Động Cốt Lõi
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium text-justify">
             Chúng tôi tập trung toàn bộ nguồn lực vào 4 chương trình trọng điểm, thiết thực và bền bỉ — giải quyết trực tiếp các nhu cầu cấp bách của bệnh nhân khó khăn, trẻ em hiếu học và đồng bào vùng cao.
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function Activities() {
                   </div>
                 </div>
 
-                <p className="text-gray-600 text-sm leading-relaxed font-medium">
+                <p className="text-gray-600 text-sm leading-relaxed font-medium text-justify">
                   {field.description}
                 </p>
 
@@ -116,7 +116,7 @@ export default function Activities() {
         {/* CTA to volunteer */}
         <div className="bg-gradient-to-r from-primary to-green-900 text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-md">
           <h2 className="text-2xl sm:text-3xl font-extrabold">Hãy cùng chúng tôi viết tiếp hành trình nhân ái</h2>
-          <p className="max-w-2xl mx-auto text-gray-200 text-sm leading-relaxed font-medium">
+          <p className="max-w-2xl mx-auto text-gray-200 text-sm leading-relaxed font-medium text-justify">
             Chúng tôi luôn trân trọng mọi sự chung tay từ các nhà hảo tâm, mạnh thường quân và các bạn tình nguyện viên để cùng duy trì những nồi cháo ấm lòng, thắp sáng những ngọn đèn vùng cao và tiếp sức cho các em nhỏ vững bước đến trường.
           </p>
           <div className="pt-2">

@@ -46,7 +46,7 @@ export default async function About() {
           <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
             Câu lạc bộ Thiện nguyện Hoa Trên Đá
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed font-medium">
+          <p className="text-lg text-gray-600 leading-relaxed font-medium text-justify">
             CLB được thành lập với mong muốn kết nối những trái tim nhiệt huyết, cùng nhau thực hiện các hoạt động ý nghĩa, đồng hành với trẻ em, người dân và những hoàn cảnh khó khăn; đồng thời tạo môi trường để thành viên rèn luyện, trưởng thành và sống có trách nhiệm hơn với cộng đồng.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default async function About() {
                     <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
                     <h3 className="font-bold text-gray-900">{value.title}</h3>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed text-justify">{value.description}</p>
                 </div>
               </div>
             ))}
@@ -74,7 +74,7 @@ export default async function About() {
 
         {/* Team Members */}
         <div className="space-y-10">
-          <div className="space-y-2 text-center md:text-left">
+          <div className="space-y-2 text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-primary">Ban Điều Hành</h2>
             <p className="text-gray-500 text-sm">Những con người nhiệt huyết điều hành hoạt động của Hoa Trên Đá.</p>
           </div>
@@ -96,7 +96,7 @@ export default async function About() {
                   <p className="text-xs font-bold text-accent uppercase tracking-wider">{member.role}</p>
                   <p className="text-xs text-gray-500">{member.department}</p>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed italic">
+                <p className="text-gray-600 text-sm leading-relaxed italic text-justify">
                   "{member.bio}"
                 </p>
               </div>

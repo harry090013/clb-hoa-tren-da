@@ -28,3 +28,14 @@ body {
 .text-balance {
   text-wrap: balance;
 }
+
+/* Typography alignment: Justify text for professional, clean reading flow */
+p:not(.text-center):not([class*="text-center"]) {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.prose p {
+  text-align: justify;
+  text-justify: inter-word;
+}

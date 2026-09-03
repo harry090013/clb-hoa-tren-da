@@ -80,7 +80,7 @@ export default function TransparencyClientList({ initialReports }: TransparencyC
                   </h2>
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-primary/10 text-primary">
-                  DỮ LIỆU ĐƯỢC TẢI TỪ SUPABASE
+                  Sao kê chính thức
                 </div>
               </div>
 

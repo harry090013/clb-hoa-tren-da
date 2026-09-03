@@ -23,7 +23,7 @@ export default async function Projects() {
           <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
             Các Dự Án Thiện Nguyện
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed font-medium">
+          <p className="text-lg text-gray-600 leading-relaxed font-medium text-justify">
             Thông tin đầy đủ về các dự án kêu gọi quyên góp và các chương trình hỗ trợ cộng đồng của câu lạc bộ Hoa Trên Đá.
           </p>
         </div>
@@ -36,7 +36,7 @@ export default async function Projects() {
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-gray-900">Chiến dịch mới đang trong giai đoạn chuẩn bị</h3>
-              <p className="text-sm text-gray-600 leading-relaxed font-medium">
+              <p className="text-sm text-gray-600 leading-relaxed font-medium text-center">
                 Hiện tại CLB Hoa Trên Đá chưa mở chiến dịch gây quỹ trực tuyến nào. Ban Điều Hành đang tiến hành khảo sát thực địa để lựa chọn các điểm trường và bà con khó khăn cần hỗ trợ tiếp theo.
               </p>
             </div>
@@ -80,7 +80,7 @@ export default async function Projects() {
                     <h3 className="text-xl font-bold text-gray-900 leading-snug">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 text-sm line-clamp-3">
+                    <p className="text-gray-600 text-sm line-clamp-3 text-justify">
                       {project.excerpt}
                     </p>
                   </div>

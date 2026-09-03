@@ -49,6 +49,10 @@
    - `Xóm Trại, Thôn Quế Xuân, Xã Xuân Phú, TP Đà Nẵng`
    - Hotline: `0379 163 913`
    - Email: `hoatrendaclb@gmail.com`
+7. **Quy chuẩn hiển thị nội dung & Typography**:
+   - Toàn bộ nội dung chữ trên website (đoạn văn giới thiệu, bài viết, mô tả dự án, tóm tắt, điều khoản) đều được căn lề 2 bên (`text-justify`, `text-align: justify; text-justify: inter-word;`) mang lại vẻ ngoài ấn loát chỉn chu, chuyên nghiệp.
+   - Các tiêu đề chính, huy hiệu, số liệu thống kê và thẻ banner phù hợp được căn giữa (`text-center`).
+   - Tuyệt đối không để nội dung thân bài và mô tả bị căn trái lệch lạc.
 
 ## Last Updated
 2026-09-03

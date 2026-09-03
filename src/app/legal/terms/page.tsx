@@ -6,7 +6,7 @@ export const metadata = {
 export default function TermsOfService() {
   return (
     <div className="bg-white py-12 sm:py-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 prose max-w-none text-gray-700 leading-relaxed font-sans">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 prose max-w-none text-gray-700 leading-relaxed font-sans text-justify">
         <h1 className="text-3xl font-extrabold text-primary">Điều Khoản Hoạt Động</h1>
         <p className="text-xs text-gray-400 font-semibold">Cập nhật lần cuối: 12 tháng 08, 2026</p>
         

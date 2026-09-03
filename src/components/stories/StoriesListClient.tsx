@@ -68,7 +68,7 @@ export default function StoriesListClient({
   return (
     <div className="flex flex-col gap-10">
       {/* Header Intro Area */}
-      <div className="text-left max-w-3xl flex flex-col gap-3">
+      <div className="max-w-3xl flex flex-col gap-3">
         <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3.5 py-1.5 rounded-full w-fit">
           <Sparkles className="w-3.5 h-3.5 text-accent" />
           Góc chia sẻ & cảm xúc
@@ -76,7 +76,7 @@ export default function StoriesListClient({
         <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
           Hành Trình Hoa Trên Đá
         </h1>
-        <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-medium">
+        <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-medium text-justify">
           Nơi lưu giữ những câu chuyện chân thực, nhật ký thực địa và bài học sâu sắc từ các chuyến thiện nguyện trên nẻo đường vùng cao của các thành viên Hoa Trên Đá.
         </p>
       </div>
