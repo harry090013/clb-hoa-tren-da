@@ -30,8 +30,19 @@ export default function TransparencyClientList({ initialReports }: TransparencyC
   return (
     <div className="space-y-12">
       {reports.length === 0 ? (
-        <div className="bg-surface rounded-3xl border border-gray-100 p-12 text-center text-gray-500 font-semibold shadow-inner">
-          Hiện tại chưa có báo cáo tài chính công khai nào.
+        <div className="bg-surface rounded-3xl border border-dashed border-gray-200 p-16 text-center max-w-2xl mx-auto space-y-4 shadow-sm">
+          <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto">
+            <FileText className="w-7 h-7 text-primary" />
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-xl font-bold text-gray-900">Cam kết minh bạch tài chính 100%</h3>
+            <p className="text-sm text-gray-600 leading-relaxed font-medium">
+              Hiện tại CLB Hoa Trên Đá chưa mở chiến dịch gây quỹ công khai. Khi chính thức phát động dự án thiện nguyện mới, toàn bộ các khoản đóng góp và biên lai chi tiêu thực tế sẽ được cập nhật và sao kê chi tiết tại đây.
+            </p>
+          </div>
+          <p className="text-xs text-gray-500 font-semibold pt-2">
+            Hệ thống đối soát minh bạch — Nói KHÔNG với sự mập mờ tài chính.
+          </p>
         </div>
       ) : (
         reports.map((report) => {

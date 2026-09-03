@@ -2,7 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { Mail, Phone, Calendar, Building, Clipboard, Save, X, Loader2, Edit } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Calendar,
+  Building,
+  Clipboard,
+  Save,
+  X,
+  Loader2,
+  Edit,
+  AlertCircle,
+  RefreshCw,
+  Handshake,
+} from "lucide-react";
 
 interface PartnershipRequest {
   id: string;
@@ -12,14 +25,16 @@ interface PartnershipRequest {
   phone: string;
   message: string;
   status: "new" | "contacted" | "accepted" | "rejected";
-  internal_note: string;
+  internal_note?: string;
   created_at: string;
+  is_offline?: boolean;
 }
 
 export default function AdminPartnerships() {
   const [requests, setRequests] = useState<PartnershipRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+  const [isDbOffline, setIsDbOffline] = useState(false);
 
   // Filter state
   const [statusFilter, setStatusFilter] = useState<string>("all");
@@ -31,11 +46,40 @@ export default function AdminPartnerships() {
 
   const fetchRequests = async () => {
     setLoading(true);
-    const { data } = await supabase
-      .from("partnership_requests")
-      .select("*")
-      .order("created_at", { ascending: false });
-    setRequests(data || []);
+    let supabaseData: PartnershipRequest[] = [];
+    let dbOffline = false;
+
+    try {
+      const { data, error } = await supabase
+        .from("partnership_requests")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+      if (data) supabaseData = data;
+    } catch (err) {
+      console.warn("Could not fetch from Supabase (possibly paused):", err);
+      dbOffline = true;
+    }
+
+    // Merge with local offline submissions
+    let localData: PartnershipRequest[] = [];
+    try {
+      const stored = localStorage.getItem("offline_partners");
+      if (stored) {
+        localData = JSON.parse(stored);
+      }
+    } catch {}
+
+    const combined = [...localData];
+    supabaseData.forEach((s) => {
+      if (!combined.some((item) => item.id === s.id)) {
+        combined.push(s);
+      }
+    });
+
+    setRequests(combined);
+    setIsDbOffline(dbOffline);
     setLoading(false);
   };
 
@@ -55,16 +99,27 @@ export default function AdminPartnerships() {
 
     setSubmitting(true);
     try {
-      const { error } = await supabase
-        .from("partnership_requests")
-        .update({
-          status,
-          internal_note: internalNote,
-          updated_at: new Date().toISOString(),
-        })
-        .eq("id", selectedReq.id);
+      if (selectedReq.is_offline) {
+        // Update local storage
+        const stored = JSON.parse(localStorage.getItem("offline_partners") || "[]");
+        const updated = stored.map((item: PartnershipRequest) =>
+          item.id === selectedReq.id
+            ? { ...item, status, internal_note: internalNote }
+            : item
+        );
+        localStorage.setItem("offline_partners", JSON.stringify(updated));
+      } else {
+        const { error } = await supabase
+          .from("partnership_requests")
+          .update({
+            status,
+            internal_note: internalNote,
+            updated_at: new Date().toISOString(),
+          })
+          .eq("id", selectedReq.id);
 
-      if (error) throw error;
+        if (error) throw error;
+      }
 
       setSelectedReq(null);
       fetchRequests();
@@ -85,9 +140,9 @@ export default function AdminPartnerships() {
   };
 
   const statusLabels = {
-    new: "Mới nhận",
-    contacted: "Đang liên hệ",
-    accepted: "Đã ký kết",
+    new: "Mới gửi",
+    contacted: "Đã liên hệ trao đổi",
+    accepted: "Đồng ý hợp tác",
     rejected: "Từ chối",
   };
 
@@ -96,34 +151,60 @@ export default function AdminPartnerships() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-            Yêu Cầu Hợp Tác Đối Tác
+            Đề Xuất Hợp Tác Đối Tác
           </h1>
           <p className="text-sm text-gray-500 font-medium mt-1">
-            Xem hồ sơ, đề xuất tài trợ/hợp tác từ các tổ chức và doanh nghiệp đồng hành.
+            Quản lý các đề xuất tài trợ, đồng hành và kết nối nguồn lực từ các cơ quan, doanh nghiệp.
           </p>
         </div>
 
-        {/* Filter dropdown */}
-        <select
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-          className="px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none text-sm font-bold text-gray-700 bg-white"
-        >
-          <option value="all">Tất cả trạng thái</option>
-          <option value="new">Mới nhận</option>
-          <option value="contacted">Đang liên hệ</option>
-          <option value="accepted">Đã ký kết</option>
-          <option value="rejected">Từ chối</option>
-        </select>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={fetchRequests}
+            className="p-2.5 rounded-xl border border-gray-200 bg-white hover:bg-gray-50 text-gray-600 transition-colors"
+            title="Làm mới danh sách"
+          >
+            <RefreshCw className="w-4 h-4" />
+          </button>
+          {/* Filter dropdown */}
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+            className="px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none text-sm font-bold text-gray-700 bg-white"
+          >
+            <option value="all">Tất cả trạng thái ({requests.length})</option>
+            <option value="new">Mới gửi</option>
+            <option value="contacted">Đã liên hệ</option>
+            <option value="accepted">Đồng ý hợp tác</option>
+            <option value="rejected">Từ chối</option>
+          </select>
+        </div>
       </div>
+
+      {/* Database connection status notice */}
+      {isDbOffline && (
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 flex items-start space-x-3 text-amber-900 text-xs font-medium">
+          <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <p className="font-bold">Lưu ý kết nối cơ sở dữ liệu:</p>
+            <p>
+              Supabase đang tạm dừng hoặc chưa kết nối. Toàn bộ đề xuất hợp tác gửi qua website được bảo lưu an toàn trong Bộ nhớ cục bộ (Local Storage) và hiển thị trực tiếp bên dưới.
+            </p>
+          </div>
+        </div>
+      )}
 
       {loading ? (
         <div className="flex justify-center items-center py-20">
-          <Loader2 className="w-8 h-8 text-accent animate-spin" />
+          <Loader2 className="w-8 h-8 text-primary animate-spin" />
         </div>
       ) : filteredRequests.length === 0 ? (
-        <div className="bg-white rounded-2xl border border-gray-100 p-12 text-center text-gray-500 font-medium shadow-sm">
-          Không tìm thấy yêu cầu hợp tác nào.
+        <div className="bg-white rounded-3xl border border-gray-100 p-16 text-center space-y-3 shadow-sm">
+          <Handshake className="w-8 h-8 text-accent mx-auto" />
+          <h3 className="text-base font-bold text-gray-900">Hiện chưa có đề xuất hợp tác nào</h3>
+          <p className="text-xs text-gray-500 max-w-sm mx-auto">
+            Khi các đối tác gửi form hợp tác từ trang Đồng Hành, thông tin liên hệ và nội dung đề xuất sẽ hiển thị tại đây.
+          </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -134,12 +215,19 @@ export default function AdminPartnerships() {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-bold ${statusColors[req.status]}`}>
-                    {statusLabels[req.status]}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-bold ${statusColors[req.status]}`}>
+                      {statusLabels[req.status]}
+                    </span>
+                    {req.is_offline && (
+                      <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
+                        Lưu cục bộ
+                      </span>
+                    )}
+                  </div>
                   <button
                     onClick={() => handleOpenReview(req)}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-accent hover:underline"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline cursor-pointer"
                   >
                     <Edit className="w-3.5 h-3.5" /> Xem chi tiết & Duyệt
                   </button>
@@ -150,11 +238,11 @@ export default function AdminPartnerships() {
                     <Building className="w-4.5 h-4.5 text-primary" /> {req.organization_name}
                   </h3>
                   <div className="flex flex-col text-xs text-gray-500 space-y-1 font-medium">
-                    <span className="font-bold text-gray-700">Đại diện: {req.contact_name}</span>
+                    <span><strong>Đại diện:</strong> {req.contact_name}</span>
                     <span className="flex items-center gap-1"><Phone className="w-3.5 h-3.5" /> {req.phone}</span>
                     <span className="flex items-center gap-1"><Mail className="w-3.5 h-3.5" /> {req.email}</span>
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5" /> Nhận ngày: {new Date(req.created_at).toLocaleDateString("vi-VN")}
+                      <Calendar className="w-3.5 h-3.5" /> Gửi ngày: {new Date(req.created_at).toLocaleDateString("vi-VN")}
                     </span>
                   </div>
                 </div>
@@ -187,42 +275,42 @@ export default function AdminPartnerships() {
             </button>
 
             <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-              <Clipboard className="w-5.5 h-5.5 text-primary" /> Duyệt hồ sơ đối tác hợp tác
+              <Clipboard className="w-5.5 h-5.5 text-primary" /> Xử lý đề xuất hợp tác
             </h2>
 
             <div className="space-y-4 text-sm text-gray-700 border-b border-gray-100 pb-4">
-              <p><strong>Tổ chức:</strong> {selectedReq.organization_name}</p>
-              <p><strong>Người đại diện:</strong> {selectedReq.contact_name}</p>
+              <p><strong>Tổ chức / Doanh nghiệp:</strong> {selectedReq.organization_name}</p>
+              <p><strong>Người liên hệ:</strong> {selectedReq.contact_name}</p>
               <p><strong>Điện thoại:</strong> {selectedReq.phone}</p>
               <p><strong>Email:</strong> {selectedReq.email}</p>
               <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100 text-xs leading-relaxed max-h-40 overflow-y-auto">
-                <strong className="block text-gray-700 mb-1">Nội dung đề nghị hợp tác:</strong>
+                <strong className="block text-gray-700 mb-1">Chi tiết đề xuất:</strong>
                 {selectedReq.message}
               </div>
             </div>
 
             <form onSubmit={handleSaveReview} className="space-y-4">
               <div className="space-y-1">
-                <label className="text-xs font-bold text-gray-700">Cập nhật trạng thái duyệt</label>
+                <label className="text-xs font-bold text-gray-700">Cập nhật trạng thái xử lý</label>
                 <select
                   value={status}
                   onChange={(e) => setStatus(e.target.value as any)}
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none text-sm font-bold text-gray-700 bg-white"
                 >
-                  <option value="new">Mới nhận</option>
-                  <option value="contacted">Đang liên hệ thỏa thuận</option>
-                  <option value="accepted">Đã ký kết hợp tác</option>
-                  <option value="rejected">Từ chối hợp tác</option>
+                  <option value="new">Mới gửi</option>
+                  <option value="contacted">Đã liên hệ trao đổi</option>
+                  <option value="accepted">Đồng ý tiếp nhận hợp tác</option>
+                  <option value="rejected">Từ chối đề xuất</option>
                 </select>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-gray-700">Ghi chú nội bộ (không công khai)</label>
+                <label className="text-xs font-bold text-gray-700">Ghi chú nội bộ</label>
                 <textarea
                   rows={3}
                   value={internalNote}
                   onChange={(e) => setInternalNote(e.target.value)}
-                  placeholder="Ghi chú phản hồi của CLB, phương án chuẩn bị tài trợ hoặc ký kết..."
+                  placeholder="Ghi chú kết quả trao đổi, người phụ trách liên hệ..."
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none text-sm font-medium resize-none"
                 />
               </div>
@@ -230,7 +318,7 @@ export default function AdminPartnerships() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-bold text-white bg-accent hover:bg-accent-dark shadow-md hover:shadow-lg disabled:opacity-50"
+                className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-bold text-white bg-primary hover:bg-primary-dark shadow-md hover:shadow-lg disabled:opacity-50 cursor-pointer"
               >
                 {submitting ? (
                   <>
@@ -240,7 +328,7 @@ export default function AdminPartnerships() {
                 ) : (
                   <>
                     <Save className="w-4 h-4 mr-2" />
-                    Cập nhật phê duyệt
+                    Lưu cập nhật
                   </>
                 )}
               </button>

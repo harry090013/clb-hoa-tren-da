@@ -120,8 +120,9 @@ export default async function Home() {
       <section className="bg-surface py-20 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center max-w-xl mx-auto">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800 border border-yellow-200 mb-2">
-              DỮ LIỆU ĐƯỢC TẢI TỪ SUPABASE (DEMO)
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-primary/10 text-primary mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-accent" />
+              Dấu ấn hành trình
             </span>
             <h2 className="text-3xl font-extrabold text-primary">Những Con Số Ấn Tượng</h2>
           </div>
@@ -144,9 +145,9 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-2">
-              <h2 className="text-3xl font-extrabold text-primary">Dự Án Đang Triển Khai</h2>
+              <h2 className="text-3xl font-extrabold text-primary">Dự Án Thiện Nguyện</h2>
               <p className="text-gray-600 text-sm max-w-xl">
-                Cùng góp sức mang lại nụ cười và tương lai tốt đẹp hơn cho thế hệ trẻ vùng cao.
+                Cùng góp sức mang lại nụ cười và tương lai tốt đẹp hơn cho các em nhỏ và đồng bào vùng cao.
               </p>
             </div>
             <Link
@@ -158,69 +159,78 @@ export default async function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-surface rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col h-full"
-              >
-                <div className="relative h-48 w-full bg-gray-200">
-                  <img
-                    src={project.coverImage}
-                    alt={project.title}
-                    className="object-cover w-full h-full"
-                  />
-                  <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wider ${
-                    project.projectStatus === "fundraising" ? "bg-accent" : "bg-primary"
-                  }`}>
-                    {project.projectStatus === "fundraising" ? "Gây quỹ" : "Chuẩn bị"}
-                  </span>
-                </div>
-                <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center text-xs font-bold text-gray-500 gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-primary" />
-                      {project.location}
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 leading-snug">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm line-clamp-3">
-                      {project.excerpt}
-                    </p>
+          {featuredProjects.length === 0 ? (
+            <div className="bg-surface rounded-3xl border border-dashed border-gray-200/80 p-12 text-center max-w-2xl mx-auto space-y-3">
+              <Sparkles className="w-8 h-8 text-accent mx-auto" />
+              <h3 className="text-lg font-bold text-gray-900">Các chiến dịch mới đang được lên kế hoạch</h3>
+              <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                CLB Hoa Trên Đá đang tiến hành khảo sát thực địa để chuẩn bị phát động các dự án thiện nguyện tiếp theo. Thông tin và mục tiêu gây quỹ minh bạch sẽ được cập nhật tại đây và trên Fanpage chính thức.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="bg-surface rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col h-full"
+                >
+                  <div className="relative h-48 w-full bg-gray-200">
+                    <img
+                      src={project.coverImage}
+                      alt={project.title}
+                      className="object-cover w-full h-full"
+                    />
+                    <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wider ${
+                      project.projectStatus === "fundraising" ? "bg-accent" : "bg-primary"
+                    }`}>
+                      {project.projectStatus === "fundraising" ? "Gây quỹ" : "Chuẩn bị"}
+                    </span>
                   </div>
-
-                  {project.targetAmount && (
-                    <div className="space-y-2 pt-2">
-                      <div className="flex justify-between text-xs font-bold text-gray-600">
-                        <span>Đã quyên góp:</span>
-                        <span>
-                          {((project.receivedAmount || 0) / project.targetAmount * 100).toFixed(0)}%
-                        </span>
+                  <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center text-xs font-bold text-gray-500 gap-1">
+                        <MapPin className="w-3.5 h-3.5 text-primary" />
+                        {project.location}
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div
-                          className="bg-accent h-2 rounded-full"
-                          style={{ width: `${((project.receivedAmount || 0) / project.targetAmount * 100)}%` }}
-                        />
-                      </div>
-                      <div className="flex justify-between text-xs text-gray-500 font-medium">
-                        <span>Mục tiêu: {project.targetAmount.toLocaleString("vi-VN")}đ</span>
-                        <span className="font-bold text-accent">Supabase Data</span>
-                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 leading-snug">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm line-clamp-3">
+                        {project.excerpt}
+                      </p>
                     </div>
-                  )}
 
-                  <Link
-                    href={`/du-an/${project.slug}`}
-                    className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-bold text-primary border border-primary/20 bg-white hover:bg-primary hover:text-white transition-colors duration-150 mt-4"
-                  >
-                    Xem chi tiết
-                  </Link>
+                    {project.targetAmount && (
+                      <div className="space-y-2 pt-2">
+                        <div className="flex justify-between text-xs font-bold text-gray-600">
+                          <span>Đã quyên góp:</span>
+                          <span>
+                            {((project.receivedAmount || 0) / project.targetAmount * 100).toFixed(0)}%
+                          </span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div
+                            className="bg-accent h-2 rounded-full"
+                            style={{ width: `${((project.receivedAmount || 0) / project.targetAmount * 100)}%` }}
+                          />
+                        </div>
+                        <div className="flex justify-between text-xs text-gray-500 font-medium">
+                          <span>Mục tiêu: {project.targetAmount.toLocaleString("vi-VN")}đ</span>
+                        </div>
+                      </div>
+                    )}
+
+                    <Link
+                      href={`/du-an/${project.slug}`}
+                      className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-full text-sm font-bold text-primary border border-primary/20 bg-white hover:bg-primary hover:text-white transition-colors duration-150 mt-4"
+                    >
+                      Xem chi tiết
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

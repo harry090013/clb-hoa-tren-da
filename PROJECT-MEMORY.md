@@ -38,7 +38,11 @@
    - *Chương trình hành trình vùng cao*: Lắp đặt đèn năng lượng mặt trời, nấu ăn dinh dưỡng cho học sinh và bà con, trao áo ấm và quà tặng.
    - *Hỗ trợ học sinh nghèo vượt khó hằng tháng*: Trao học bổng và kinh phí hỗ trợ học tập định kỳ hằng tháng.
    - *Hỗ trợ các trường hợp khẩn cấp & tai nạn*: Kêu gọi và tiếp sức kịp thời cho các ca tai nạn đột xuất, bệnh hiểm nghèo và thiên tai.
-5. **Địa chỉ liên hệ**:
+5. **Tab Đồng Hành & Quản lý Đơn (Tình nguyện viên & Đối tác)**:
+   - Giao diện nộp đơn chuyên nghiệp, gỡ bỏ toàn bộ nhãn Demo.
+   - Cơ chế bảo vệ dữ liệu hai lớp: Lưu thẳng vào Supabase khi online, tự động lưu vào hàng đợi cục bộ (Local Storage Queue) nếu cơ sở dữ liệu tạm ngắt kết nối.
+   - Admin quản trị (`/admin/volunteers` và `/admin/partnerships`) tự động gộp cả dữ liệu đám mây và cục bộ, cho phép xem, duyệt và ghi chú nội bộ mượt mà.
+6. **Địa chỉ liên hệ**:
    - `Xóm Trại, Thôn Quế Xuân, Xã Xuân Phú, TP Đà Nẵng`
    - Hotline: `0379 163 913`
    - Email: `hoatrendaclb@gmail.com`
