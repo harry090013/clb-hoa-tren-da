@@ -119,7 +119,7 @@ export default function PartnerVolunteer() {
             <Sparkles className="w-3.5 h-3.5 text-accent" />
             Cùng chung tay lan tỏa
           </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 leading-snug sm:leading-[1.25]">
             Đồng Hành Cùng Hoa Trên Đá
           </h1>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium text-justify">

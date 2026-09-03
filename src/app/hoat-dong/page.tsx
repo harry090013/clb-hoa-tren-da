@@ -65,7 +65,7 @@ export default function Activities() {
             <Sparkles className="w-3.5 h-3.5 text-accent" />
             Lĩnh vực hành động
           </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary leading-snug sm:leading-[1.25]">
             Mảng Hoạt Động Cốt Lõi
           </h1>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium text-justify">

@@ -22,7 +22,7 @@ export default async function Transparency() {
             <ShieldCheck className="w-4 h-4 text-accent" />
             Minh bạch tài chính 100%
           </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary leading-snug sm:leading-[1.25]">
             Cổng Thông Tin Minh Bạch
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed font-medium text-justify">

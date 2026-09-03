@@ -20,7 +20,7 @@ export default async function Projects() {
             <Sparkles className="w-3 h-3 text-accent" />
             Chiến dịch vì cộng đồng
           </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary leading-snug sm:leading-[1.25]">
             Các Dự Án Thiện Nguyện
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed font-medium text-justify">

@@ -30,7 +30,7 @@ export default function Contact() {
             <Sparkles className="w-3 h-3 text-accent" />
             Kết nối với chúng tôi
           </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary leading-snug sm:leading-[1.25]">
             Liên Hệ Với Hoa Trên Đá
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed font-medium text-justify">

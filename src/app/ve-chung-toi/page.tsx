@@ -43,7 +43,7 @@ export default async function About() {
             <Sparkles className="w-3 h-3 text-accent" />
             Giới thiệu CLB
           </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-primary leading-snug sm:leading-[1.25]">
             Câu lạc bộ Thiện nguyện Hoa Trên Đá
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed font-medium text-justify">
