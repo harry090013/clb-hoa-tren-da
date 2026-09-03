@@ -12,7 +12,11 @@
 ## Architecture Decisions
 - **Framework**: Next.js 16 (Turbopack) với React 19, TypeScript và Tailwind CSS v4.
 - **Rendering & Cache**: Incremental Static Regeneration (ISR) với `revalidate = 60s` cho tất cả các trang public.
-- **Rich Content Parser**: Tự xây dựng [`RichTextRenderer.tsx`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/src/components/layout/RichTextRenderer.tsx) tối ưu, không phụ thuộc thư viện ngoài, hỗ trợ tiêu đề `##`/`###`, in đậm, in nghiêng, danh sách, emoji và nhúng ảnh responsive kèm chú thích.
+- **Rich Content Parser**: Tự xây dựng [`RichTextRenderer.tsx`](file:///f:/Dev/Hoa-Tren-Da-Antigravity-Project-Pack/src/components/layout/RichTextRenderer.tsx) tối ưu, không phụ thuộc thư viện ngoài, hỗ trợ tiêu đề `##`/`###`, trích dẫn `>` phong cách blockquote border-left, in đậm, in nghiêng, danh sách, emoji và nhúng ảnh responsive kèm chú thích.
+- **Hệ thống Bài viết / Hành trình chuẩn HarryShare**:
+  - Trang danh sách (`/hanh-trinh`): Tìm kiếm thời gian thực, lọc thẻ chủ đề linh hoạt, hiển thị thời gian đọc ước tính (`phút đọc`), lưới 3 cột hiện đại có huy hiệu danh mục trên ảnh bìa.
+  - Trang chi tiết bài viết (`/hanh-trinh/[slug]`): Thanh tiến độ đọc trên cùng (`Reading Progress Bar`), thanh tương tác nổi cố định (Thích, Không thích, Chia sẻ), thẻ tác giả sinh động kèm ảnh đại diện & tiểu sử, thanh số liệu tương tác (Lượt xem, Lượt thích, Chia sẻ), gợi ý 3 bài viết liên quan, và hộp gửi bình luận tương tác.
+  - Cơ chế bộ nhớ đệm dự phòng (Fallback): Luôn đảm bảo nạp đủ 3 bài viết gốc và 4 thành viên kể cả khi Supabase đang tạm dừng.
 - **Favicon**: Sử dụng icon chuẩn App Router `src/app/icon.png` tạo từ logo gốc CLB.
 
 ## Data & Content Overview

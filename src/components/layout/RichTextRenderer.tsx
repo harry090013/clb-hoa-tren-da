@@ -162,6 +162,18 @@ export default function RichTextRenderer({ content }: RichTextRendererProps) {
       continue;
     }
 
+    // Blockquotes: > quote text
+    if (trimmed.startsWith("> ")) {
+      flushParagraph(i);
+      flushList(i);
+      elements.push(
+        <blockquote key={`quote-${i}`} className="border-l-4 border-primary bg-primary/5 pl-5 pr-4 py-3 rounded-r-2xl my-6 text-gray-800 italic text-base sm:text-lg leading-relaxed shadow-xs">
+          {parseInlineStyles(trimmed.slice(2))}
+        </blockquote>
+      );
+      continue;
+    }
+
     // Bullet list items
     const bulletMatch = line.match(/^\s*[*+-]\s+(.*)/);
     if (bulletMatch) {

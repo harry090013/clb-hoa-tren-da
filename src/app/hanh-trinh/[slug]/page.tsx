@@ -1,8 +1,7 @@
 import { getStories, getStoryBySlug } from "@/lib/data";
 import { notFound } from "next/navigation";
-import { Calendar, User, ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import RichTextRenderer from "@/components/layout/RichTextRenderer";
+import StoryDetailClient from "@/components/stories/StoryDetailClient";
+import type { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -15,6 +14,28 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const story = await getStoryBySlug(slug);
+
+  if (!story) {
+    return {
+      title: "Không tìm thấy bài viết | Hoa Trên Đá",
+    };
+  }
+
+  return {
+    title: `${story.title} | CLB Thiện nguyện Hoa Trên Đá`,
+    description: story.excerpt || "Câu chuyện hành trình thiện nguyện của CLB Hoa Trên Đá.",
+    openGraph: {
+      title: story.title,
+      description: story.excerpt,
+      images: [story.coverImage],
+      type: "article",
+    },
+  };
+}
+
 export const revalidate = 60;
 
 export default async function StoryDetail({ params }: PageProps) {
@@ -25,49 +46,14 @@ export default async function StoryDetail({ params }: PageProps) {
     notFound();
   }
 
+  const allStories = await getStories();
+  const relatedStories = allStories
+    .filter((s) => s.slug !== slug)
+    .slice(0, 3);
+
   return (
-    <div className="bg-white py-12 sm:py-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <Link
-          href="/hanh-trinh"
-          className="inline-flex items-center text-sm font-bold text-accent hover:underline gap-1"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Quay lại nhật ký hành trình
-        </Link>
-
-        <div className="space-y-4">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-primary bg-primary/10">
-            {story.storyType}
-          </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight">
-            {story.title}
-          </h1>
-
-          <div className="flex items-center space-x-6 text-sm text-gray-500 font-semibold border-y border-gray-100 py-4">
-            <div className="flex items-center gap-1.5">
-              <User className="w-4 h-4 text-primary" />
-              <span>{story.authorName}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-primary" />
-              <span>05/08/2026</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Cover */}
-        <div className="relative h-64 sm:h-96 rounded-3xl overflow-hidden bg-gray-200">
-          <img
-            src={story.coverImage}
-            alt={story.title}
-            className="object-cover w-full h-full"
-          />
-        </div>
-
-        {/* Content */}
-        <RichTextRenderer content={story.content} />
-      </div>
+    <div className="bg-white min-h-screen">
+      <StoryDetailClient story={story} relatedStories={relatedStories} />
     </div>
   );
 }

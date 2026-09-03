@@ -11,6 +11,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hoatrenda.org"),
   title: {
     template: "%s | CLB Thiện nguyện Hoa Trên Đá",
     default: "CLB Thiện nguyện Hoa Trên Đá — Từ đá nở hoa, Từ tâm lan tỏa",
