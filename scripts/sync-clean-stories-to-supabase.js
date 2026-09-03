@@ -27,18 +27,24 @@ async function sync() {
   for (const s of stories) {
     const { error } = await supabase
       .from('stories')
-      .update({
+      .upsert({
+        id: s.id,
         title: s.title,
+        slug: s.slug,
         content: s.content,
         excerpt: s.excerpt,
-        author_name: s.authorName
-      })
-      .eq('slug', s.slug);
+        cover_image: s.coverImage,
+        author_name: s.authorName,
+        story_type: s.storyType,
+        status: s.status,
+        featured: s.featured,
+        published_at: s.publishedAt,
+      }, { onConflict: 'slug' });
 
     if (error) {
-      console.log(`Failed to update ${s.slug}:`, error.message);
+      console.log(`Failed to upsert ${s.slug}:`, error.message);
     } else {
-      console.log(`Updated clean prose for ${s.slug}`);
+      console.log(`Upserted ${s.slug}`);
     }
   }
 }

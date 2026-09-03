@@ -2,6 +2,43 @@ import { Story } from '../types';
 
 export const stories: Story[] = [
   {
+    id: 'story-4',
+    title: 'Búp măng non trên hành trình yêu thương',
+    slug: 'bup-mang-non-tren-hanh-trinh-yeu-thuong',
+    excerpt: 'Có những hành trình bắt đầu từ những điều rất nhỏ: một đôi tay nhỏ chuẩn bị những phần quà, một bước chân nhỏ cùng đoàn tình nguyện vượt qua những cung đường xa...',
+    content: `Có những hành trình bắt đầu từ những điều rất nhỏ. Một đôi tay nhỏ góp sức chuẩn bị những phần quà. Một bước chân nhỏ theo mọi người vượt qua những cung đường xa. Và một trái tim non trẻ lần đầu biết rằng, ở đâu đó trên những miền núi cao, vẫn có những người bạn đồng trang lứa đang cần được sẻ chia.
+
+Từ đồng bằng, em cùng đoàn tình nguyện Hoa Trên Đá lên vùng cao. Em chưa thể làm những điều thật lớn lao, nhưng em hiểu rằng mình có thể bắt đầu từ những việc vừa sức: phụ các anh chị một tay sắp xếp đồ đạc, tự tay trao một món quà nhỏ, dành trọn vẹn sự chú tâm và mang theo thật nhiều sự chân thành.
+
+![Những đôi tay nhỏ chăm chú chuẩn bị từng phần quà](/images/bupmangnon/bupmangnon_1.webp)
+
+Người xưa vẫn có câu: "Tuổi nhỏ làm việc nhỏ, tùy theo sức của mình". Có lẽ, giá trị sâu xa của một chuyến thiện nguyện không chỉ nằm ở những vật phẩm hay phần quà chúng ta mang đến trao đi, mà còn ở chính những hạt mầm tử tế được gieo lại trong tâm hồn mỗi người sau chuyến đi.
+
+![Những bước chân theo đoàn tình nguyện đến với vùng cao](/images/bupmangnon/bupmangnon_2.webp)
+
+Với những em nhỏ, đây có thể là lần đầu tiên các em được trải nghiệm cảm giác sẻ chia thực sự. Là lần đầu tiên các em bước ra khỏi thế giới quen thuộc thường ngày, tận mắt chứng kiến những nẻo đường gập ghềnh sương gió và nhận ra rằng niềm vui của mình hoàn toàn có thể trở thành niềm vui ấm áp của một người bạn khác.
+
+![Niềm vui và sự gắn kết chân thành giữa các em nhỏ](/images/bupmangnon/bupmangnon_3.webp)
+
+Như những búp măng non, các em vẫn đang lớn lên từng ngày. Hoa Trên Đá tin rằng, nếu những năm tháng đầu đời được nuôi dưỡng bằng lòng nhân ái, sự thấu cảm và tinh thần trách nhiệm với cộng đồng, những búp măng ấy mai này sẽ lớn lên thành những con người biết sống đẹp và biết trao đi.
+
+![Những hạt mầm nhân ái được nuôi dưỡng qua từng hành trình](/images/bupmangnon/bupmangnon_4.webp)
+
+Hôm nay, em góp một đôi tay nhỏ. Ngày mai, chính em sẽ là người tiếp nối ngọn lửa yêu thương, tiếp tục trao đi những điều tử tế cho các thế hệ mai sau.
+
+Một hành động nhỏ hôm nay có thể gieo nên một giá trị lớn cho ngày mai. Tuổi nhỏ làm việc nhỏ, nhưng những điều được gieo từ tuổi thơ sẽ là hành trang theo ta bền bỉ suốt một đời.
+
+Hoa Trên Đá — Từ đá nở hoa, từ tâm lan tỏa.`,
+    coverImage: '/images/bupmangnon/bupmangnon_1.webp',
+    authorName: 'Hoa Trên Đá',
+    storyType: 'Nhật ký hành trình',
+    featured: true,
+    status: 'published',
+    publishedAt: '2026-09-03T08:00:00Z',
+    createdAt: '2026-09-03T08:00:00Z',
+    updatedAt: '2026-09-03T08:00:00Z',
+  },
+  {
     id: 'story-1',
     title: 'Vì sao chúng mình mang tên “Hoa Trên Đá”?',
     slug: 'vi-sao-chung-minh-mang-ten-hoa-tren-da',
