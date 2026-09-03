@@ -139,6 +139,31 @@ export default function RichTextRenderer({ content }: RichTextRendererProps) {
       continue;
     }
 
+    // YouTube video embed: https://youtu.be/... or https://www.youtube.com/watch?v=...
+    const ytMatch = trimmed.match(/^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(?:\S*)?$/);
+    if (ytMatch) {
+      flushParagraph(i);
+      flushList(i);
+      const videoId = ytMatch[1];
+      elements.push(
+        <div key={`yt-${i}`} className="my-8 space-y-2">
+          <div className="rounded-3xl overflow-hidden shadow-lg border border-gray-100 aspect-video relative bg-black">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+              title="Video phóng sự thực tế ghi nhận hoàn cảnh"
+              className="w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+          <p className="text-xs text-center font-bold text-gray-400 italic">
+            Video phóng sự thực tế ghi nhận hoàn cảnh
+          </p>
+        </div>
+      );
+      continue;
+    }
+
     // Headings
     if (trimmed.startsWith("### ")) {
       flushParagraph(i);

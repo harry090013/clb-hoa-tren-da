@@ -2,6 +2,41 @@ import { Story } from '../types';
 
 export const stories: Story[] = [
   {
+    id: 'story-6',
+    title: 'Lời kêu gọi yêu thương: Xin chung tay giúp đỡ chị Lê Thị Liêu',
+    slug: 'loi-keu-goi-giup-do-chi-le-thi-lieu-xuong-thuy-tinh-tai-nan',
+    excerpt: 'Chị Lê Thị Liêu (35 tuổi, thôn Đồng Tràm Tây, xã Xuân Phú) không may mắc bệnh xương thủy tinh bẩm sinh, mồ côi cha mẹ. Vừa qua chị lại gặp tai nạn gãy xương chân, cuộc sống lâm vào cảnh vô cùng ngặt nghèo rất cần sự chung tay tiếp sức.',
+    content: `Có những số phận sinh ra đã phải gánh chịu quá nhiều thiệt thòi của số phận, nhưng họ vẫn kiên cường vươn lên từng ngày để tự nuôi sống bản thân bằng chính sức lao động lương thiện của mình. Chị Lê Thị Liêu là một người phụ nữ như thế.
+
+Chị Lê Thị Liêu năm nay 35 tuổi, hiện đang cư ngụ tại thôn Đồng Tràm Tây (cũ), xã Xuân Phú, thành phố Đà Nẵng. Ngay từ khi lọt lòng, chị Liêu đã không may mắc phải căn bệnh xương thủy tinh bẩm sinh — căn bệnh khiến xương giòn xốp và có thể gãy chỉ sau một va chạm rất nhẹ. Cha mẹ đều đã qua đời từ sớm, chị Liêu nương tựa cùng người chị gái trong căn nhà đơn sơ.
+
+Dẫu thân thể đau yếu và việc đi lại vô cùng khó khăn, chị chưa bao giờ chịu đầu hàng số phận. Hằng ngày, chị vẫn cần mẫn lăn lộn đi bán từng tờ vé số để tự kiếm tiền mua thuốc men và trang trải miếng cơm manh áo, không muốn trở thành gánh nặng cho người thân.
+
+Thế nhưng nghịch cảnh lại một lần nữa giáng xuống cuộc đời người phụ nữ nghèo khổ. Cách đây ít ngày, trong lúc mưu sinh, chị không may gặp tai nạn giao thông bất ngờ và bị gãy xương chân. Đối với một người mắc chứng xương thủy tinh, chấn thương gãy xương là một cơn ác mộng đau đớn và vô cùng nguy hiểm.
+
+https://youtu.be/IjCh7utP2Nk
+
+Sau thời gian điều trị cấp cứu tại bệnh viện, hiện chị Liêu đã được xuất viện về nhà theo dõi. Tuy nhiên, sức khỏe của chị hiện tại còn rất yếu, chân vẫn phải cố định và mọi sinh hoạt cá nhân đều phụ thuộc hoàn toàn vào người khác. Chị không thể tiếp tục công việc bán vé số mưu sinh, trong khi tiền thuốc giảm đau, bồi bổ và chi phí sinh hoạt hằng ngày đang đè nặng lên đôi vai của hai chị em.
+
+Căn nhà nhỏ giờ đây bao trùm nỗi lo lắng và bế tắc. Chị Liêu vừa phải chịu đựng những cơn đau thể xác giày vò, vừa thắt lòng vì không biết những ngày sắp tới sẽ xoay xở thuốc thang và ăn uống ra sao.
+
+Trước hoàn cảnh ngặt nghèo và xót xa của chị Lê Thị Liêu, Câu lạc bộ Thiện nguyện Hoa Trên Đá tha thiết phát động lời kêu gọi đến Quý Mạnh Thường Quân, các nhà hảo tâm và cộng đồng gần xa. Xin hãy mở rộng vòng tay nhân ái, cùng chung tay ủng hộ một phần kinh phí để tiếp sức cho chị Liêu có điều kiện chữa trị, mua thuốc men và vượt qua giai đoạn hiểm nghèo này.
+
+Bên cạnh các chương trình lớn dành cho trẻ em và đồng bào vùng cao, Hoa Trên Đá luôn là chiếc cầu nối tin cậy để kịp thời tiếp sức cho những hoàn cảnh tai nạn, bệnh tật ngặt nghèo ngay tại quê hương. Mỗi sự đóng góp của quý vị, dù ít hay nhiều, đều là nguồn động viên tinh thần to lớn giúp chị Liêu có thêm nghị lực kiên cường chiến đấu với bệnh tật.
+
+Mọi thông tin tiếp nhận hỗ trợ và thăm hỏi trực tiếp, quý nhà hảo tâm có thể liên hệ Ban Điều Hành qua số Hotline/Zalo: 0379 163 913.
+
+Hoa Trên Đá — Từ đá nở hoa, từ tâm lan tỏa.`,
+    coverImage: '/images/hoancanh/chi_lieu.webp',
+    authorName: 'Ban Điều Hành',
+    storyType: 'Cứu trợ khẩn cấp',
+    featured: true,
+    status: 'published',
+    publishedAt: '2026-09-03T14:00:00Z',
+    createdAt: '2026-09-03T14:00:00Z',
+    updatedAt: '2026-09-03T14:00:00Z',
+  },
+  {
     id: 'story-4',
     title: 'Búp măng non trên hành trình yêu thương',
     slug: 'bup-mang-non-tren-hanh-trinh-yeu-thuong',

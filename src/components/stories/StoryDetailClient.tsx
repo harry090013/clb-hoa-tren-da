@@ -33,6 +33,46 @@ interface CommentItem {
 }
 
 const SEED_COMMENTS_MAP: Record<string, CommentItem[]> = {
+  "story-6": [
+    {
+      id: "cmt-seed-6-1",
+      authorName: "Chị Mai Phương (Đà Nẵng)",
+      content: "Thương chị Liêu quá, đã xương thủy tinh bẩm sinh lại còn gặp tai nạn gãy chân. Xin góp chút tấm lòng gửi đến chị, cầu mong chị sớm bình phục!",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-6-2",
+      authorName: "Nguyễn Tấn Đạt",
+      content: "Biết hoàn cảnh chị Liêu hay bán vé số gần chợ, tánh tình hiền lành mà chịu khó lắm. Mong mọi người chung tay giúp chị vượt qua cơn hoạn nạn này.",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-6-3",
+      authorName: "Cô Bảy Xuân Phú",
+      content: "Hoàn cảnh thật sự ngặt nghèo. Cảm ơn CLB Hoa Trên Đá đã kịp thời đến thăm hỏi và làm cầu nối chia sẻ cho chị Liêu.",
+      createdAt: "03/09/2026",
+    },
+  ],
+  "loi-keu-goi-giup-do-chi-le-thi-lieu-xuong-thuy-tinh-tai-nan": [
+    {
+      id: "cmt-seed-6-1",
+      authorName: "Chị Mai Phương (Đà Nẵng)",
+      content: "Thương chị Liêu quá, đã xương thủy tinh bẩm sinh lại còn gặp tai nạn gãy chân. Xin góp chút tấm lòng gửi đến chị, cầu mong chị sớm bình phục!",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-6-2",
+      authorName: "Nguyễn Tấn Đạt",
+      content: "Biết hoàn cảnh chị Liêu hay bán vé số gần chợ, tánh tình hiền lành mà chịu khó lắm. Mong mọi người chung tay giúp chị vượt qua cơn hoạn nạn này.",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-6-3",
+      authorName: "Cô Bảy Xuân Phú",
+      content: "Hoàn cảnh thật sự ngặt nghèo. Cảm ơn CLB Hoa Trên Đá đã kịp thời đến thăm hỏi và làm cầu nối chia sẻ cho chị Liêu.",
+      createdAt: "03/09/2026",
+    },
+  ],
   "story-4": [
     {
       id: "cmt-seed-4-1",
