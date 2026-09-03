@@ -169,6 +169,46 @@ const SEED_COMMENTS_MAP: Record<string, CommentItem[]> = {
       createdAt: "09/08/2026",
     },
   ],
+  "story-5": [
+    {
+      id: "cmt-seed-5-1",
+      authorName: "Cô Bích Thảo (Quảng Ngãi)",
+      content: "Một chuyến đi thật nhiều cảm xúc và ý nghĩa của hai câu lạc bộ. Nhìn các con trên Nóc Ông Dũ nhận quà mà rơi nước mắt vì thương. Cảm ơn Hoa Trên Đá và Dấu Chân Tình Nguyện!",
+      createdAt: "19/08/2026",
+    },
+    {
+      id: "cmt-seed-5-2",
+      authorName: "Nguyễn Đức Trọng (TNV)",
+      content: "Cung đường lên Trà Vân tuy dốc và trơn nhưng nụ cười của bà con và các em nhỏ đã xua tan hết mọi mệt mỏi. Tự hào được là một phần của hành trình số 16!",
+      createdAt: "20/08/2026",
+    },
+    {
+      id: "cmt-seed-5-3",
+      authorName: "Thanh Hằng",
+      content: "Biết ơn sự chung tay của Quý Mạnh Thường Quân và các bạn trẻ. Hy vọng ngọn lửa yêu thương nơi Nóc Ông Dũ sẽ tiếp tục sưởi ấm cho các em trong mùa đông sắp tới.",
+      createdAt: "20/08/2026",
+    },
+  ],
+  "ket-noi-yeu-thuong-16-noc-ong-du-tra-van": [
+    {
+      id: "cmt-seed-5-1",
+      authorName: "Cô Bích Thảo (Quảng Ngãi)",
+      content: "Một chuyến đi thật nhiều cảm xúc và ý nghĩa của hai câu lạc bộ. Nhìn các con trên Nóc Ông Dũ nhận quà mà rơi nước mắt vì thương. Cảm ơn Hoa Trên Đá và Dấu Chân Tình Nguyện!",
+      createdAt: "19/08/2026",
+    },
+    {
+      id: "cmt-seed-5-2",
+      authorName: "Nguyễn Đức Trọng (TNV)",
+      content: "Cung đường lên Trà Vân tuy dốc và trơn nhưng nụ cười của bà con và các em nhỏ đã xua tan hết mọi mệt mỏi. Tự hào được là một phần của hành trình số 16!",
+      createdAt: "20/08/2026",
+    },
+    {
+      id: "cmt-seed-5-3",
+      authorName: "Thanh Hằng",
+      content: "Biết ơn sự chung tay của Quý Mạnh Thường Quân và các bạn trẻ. Hy vọng ngọn lửa yêu thương nơi Nóc Ông Dũ sẽ tiếp tục sưởi ấm cho các em trong mùa đông sắp tới.",
+      createdAt: "20/08/2026",
+    },
+  ],
 };
 
 export default function StoryDetailClient({

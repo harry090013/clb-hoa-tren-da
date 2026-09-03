@@ -26,11 +26,12 @@
    - Nguyễn Khánh Tuấn (Trưởng Ban Hậu Cần)
    - Nguyễn Quang Hiếu (Trưởng Ban Truyền Thông)
    - Ảnh đại diện: Đã crop vuông 400x400 WebP tại `/images/bdh_*.webp`.
-2. **Bài viết / Câu chuyện (4 bài chính thức)**:
-   - *Búp măng non trên hành trình yêu thương* (Tác giả: Hoa Trên Đá, 4 ảnh minh họa WebP tại `/images/bupmangnon/`)
-   - *Vì sao chúng mình mang tên “Hoa Trên Đá”?* (Tác giả: Đoàn Xuân Lộc)
-   - *Trước khi có Hoa Trên Đá, chúng mình đã đi qua những hành trình nào?* (Tác giả: Ban Điều Hành)
-   - *Hoa Trên Đá sẽ làm gì?* (Tác giả: Nguyễn Quang Hiếu)
+2. **Bài viết / Câu chuyện (5 bài chính thức)**:
+   - *Búp măng non trên hành trình yêu thương* (Tác giả: Hoa Trên Đá, 4 ảnh minh họa WebP tại `/images/bupmangnon/`, đăng 03/09/2026)
+   - *Nhìn lại hành trình Kết nối yêu thương 16: Nóc Ông Dũ (Trà Vân)* (Tác giả: Ban Điều Hành, 7 ảnh minh họa WebP tại `/images/ketnoiyeuthuong16/`, đăng 19/08/2026)
+   - *Vì sao chúng mình mang tên “Hoa Trên Đá”?* (Tác giả: Đoàn Xuân Lộc, đăng 05/08/2026)
+   - *Trước khi có Hoa Trên Đá, chúng mình đã đi qua những hành trình nào?* (Tác giả: Ban Điều Hành, đăng 05/08/2026)
+   - *Hoa Trên Đá sẽ làm gì?* (Tác giả: Nguyễn Quang Hiếu, đăng 05/08/2026)
    - Đã tối ưu hóa toàn bộ hình ảnh sang WebP và định dạng văn xuôi tự sự HarryShare không emoji rườm rà.
 3. **Dự án & Minh bạch tài chính**:
    - Đã dọn sạch các dự án và báo cáo thu/chi test. Sẵn sàng nhập số liệu thực tế khi CLB phát động chiến dịch mới.

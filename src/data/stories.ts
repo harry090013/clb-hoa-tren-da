@@ -39,6 +39,49 @@ Hoa Trên Đá — Từ đá nở hoa, từ tâm lan tỏa.`,
     updatedAt: '2026-09-03T08:00:00Z',
   },
   {
+    id: 'story-5',
+    title: 'Nhìn lại hành trình Kết nối yêu thương 16: Nóc Ông Dũ (Trà Vân)',
+    slug: 'ket-noi-yeu-thuong-16-noc-ong-du-tra-van',
+    excerpt: 'Hai ngày cuối tuần đong đầy cảm xúc của CLB Hoa Trên Đá cùng CLB Dấu Chân Tình Nguyện Quảng Ngãi đã khép lại trọn vẹn bằng những nụ cười hồn nhiên của các em nhỏ vùng cao Nóc Ông Dũ, xã Trà Vân.',
+    content: `Hai ngày cuối tuần của hành trình Kết nối yêu thương lần thứ 16 đã chính thức khép lại trong sự ấm áp và trọn vẹn. Đó là chuyến đi chung tay đầy ý nghĩa giữa Câu lạc bộ Thiện nguyện Hoa Trên Đá và Câu lạc bộ Dấu Chân Tình Nguyện Quảng Ngãi, cùng hướng về Nóc Ông Dũ, xã Trà Vân.
+
+Vượt qua những cung đường đèo dốc quanh co và sương gió đặc trưng của vùng cao Nam Trà My, đoàn tình nguyện đã mang theo những phần quà thiết yếu, những bữa ăn ấm nóng dinh dưỡng và trên hết là tình cảm chân thành của hàng trăm tấm lòng hảo tâm gửi gắm đến các em nhỏ cùng bà con nơi đây.
+
+![Đoàn tình nguyện tập kết và chuẩn bị các phần quà tại Nóc Ông Dũ](/images/ketnoiyeuthuong16/anh1.webp)
+
+Có thể những phần quà trao đi không quá lớn về mặt vật chất, nhưng ẩn chứa phía sau mỗi gói quà, mỗi manh áo ấm là biết bao sự sẻ chia thầm lặng. Đó là sự chung tay của những con người chưa từng gặp mặt, đến từ nhiều vùng quê khác nhau, nhưng cùng chung một nhịp đập: mang thêm một chút ấm áp, một chút niềm vui và thêm nhiều hy vọng đến với những mảnh đời nơi đá núi.
+
+![Không khí ấm cúng trong buổi sinh hoạt và trao quà cho các em nhỏ](/images/ketnoiyeuthuong16/anh2.webp)
+
+![Những nụ cười hồn nhiên rạng rỡ của các em học sinh vùng cao Trà Vân](/images/ketnoiyeuthuong16/anh3.webp)
+
+Những ánh mắt trong veo và nụ cười rạng rỡ của các em khi nhận được phần quà mới, được cùng các anh chị tình nguyện viên ca hát, vui chơi giữa sân trường bản nhỏ chính là món quà vô giá nhất dành cho cả đoàn sau những giờ phút di chuyển vất vả.
+
+![Tình cảm gắn kết thân thương giữa đoàn thiện nguyện và bà con bản làng](/images/ketnoiyeuthuong16/anh6.webp)
+
+Mỗi nụ cười của các em là một lời nhắc nhở mộc mạc mà sâu sắc: cho đi không làm chúng ta vơi đi, mà khiến yêu thương được nhân lên gấp bội.
+
+![Chăm chút từng phần quà trao tận tay các em nhỏ](/images/ketnoiyeuthuong16/anh4.webp)
+
+![Những khoảnh khắc giản dị mà đong đầy nghĩa tình](/images/ketnoiyeuthuong16/anh5.webp)
+
+Thay mặt Câu lạc bộ Thiện nguyện Hoa Trên Đá và Câu lạc bộ Dấu Chân Tình Nguyện Quảng Ngãi, chúng tôi xin gửi lời tri ân sâu sắc nhất đến Quý Mạnh Thường Quân, quý cô chú, anh chị em và toàn thể các bạn tình nguyện viên đã tin tưởng, đồng hành và tiếp sức cho chuyến đi lần này.
+
+![Bảng tri ân và tổng kết sự đồng hành của Quý Mạnh Thường Quân](/images/ketnoiyeuthuong16/anhungho.webp)
+
+Chính sự chung tay của quý vị đã giúp ngọn lửa nhân ái tiếp tục được thắp sáng giữa đại ngàn. Hành trình Kết nối yêu thương 16 đã khép lại, nhưng những kỷ niệm đẹp và tình yêu thương được gieo mầm nơi Nóc Ông Dũ sẽ còn mãi vẹn nguyên trong trái tim của mỗi người tham gia.
+
+Hoa Trên Đá — Từ đá nở hoa, từ tâm lan tỏa.`,
+    coverImage: '/images/ketnoiyeuthuong16/anh1.webp',
+    authorName: 'Ban Điều Hành',
+    storyType: 'Nhật ký hành trình',
+    featured: true,
+    status: 'published',
+    publishedAt: '2026-08-19T08:00:00Z',
+    createdAt: '2026-08-19T08:00:00Z',
+    updatedAt: '2026-08-19T08:00:00Z',
+  },
+  {
     id: 'story-1',
     title: 'Vì sao chúng mình mang tên “Hoa Trên Đá”?',
     slug: 'vi-sao-chung-minh-mang-ten-hoa-tren-da',
