@@ -1,9 +1,9 @@
 # Project Memory
 
 ## Current Status
-- **Trạng thái hiện tại**: Website đang ở chế độ **Bảo trì / Đang cập nhật** (Maintenance Mode) đối với khách vãng lai.
-- **Quyền truy cập & Xem trước**:
-  - Xem trước giao diện công khai: Bấm nút **Bypass** và nhập mật khẩu `130920`.
+- **Trạng thái hiện tại**: Website đã **MỞ CỬA CÔNG KHAI** (Maintenance Mode: OFF). Khách truy cập từ Fanpage và các nguồn bên ngoài có thể truy cập thẳng vào trang web mà không cần mật khẩu hay màn hình chờ.
+- **Quyền truy cập**:
+  - Người dùng công chúng: Duyệt toàn bộ website công khai trực tiếp.
   - Quản trị viên: Truy cập trực tiếp qua `/admin/login` (hoặc `/admin`).
   - Lớp bảo mật tài chính phụ: Nhập mã PIN `1309` (hoặc mã cấu hình trên Vercel `NEXT_PUBLIC_FINANCIAL_PIN`) để xem/sửa mục Minh bạch tài chính.
 - **Build & Mã nguồn**: Nhánh `main` sạch (Clean tree), đã đẩy lên GitHub `harry090013/clb-hoa-tren-da`.

@@ -10,28 +10,27 @@ interface MaintenanceGateProps {
   children: React.ReactNode;
 }
 
+// Bật/tắt chế độ bảo trì toàn bộ website (false = cho phép truy cập ngay)
+const MAINTENANCE_MODE = false;
+
 export default function MaintenanceGate({ children }: MaintenanceGateProps) {
   const pathname = usePathname();
   const router = useRouter();
   
-  const [isAdminRoute, setIsAdminRoute] = useState(true);
   const [bypass, setBypass] = useState(false);
   const [showPrompt, setShowPrompt] = useState(false);
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
-  const [checking, setChecking] = useState(true);
+
+  const isAdminRoute = pathname.startsWith("/admin");
 
   useEffect(() => {
-    // Check if it is admin route (starts with /admin)
-    const isadmin = pathname.startsWith("/admin");
-    setIsAdminRoute(isadmin);
-    
-    // Check if bypass exists in storage
-    const isBypassed = localStorage.getItem("bypass_maintenance") === "true";
-    if (isBypassed) {
-      setBypass(true);
+    if (MAINTENANCE_MODE) {
+      const isBypassed = localStorage.getItem("bypass_maintenance") === "true";
+      if (isBypassed) {
+        setBypass(true);
+      }
     }
-    setChecking(false);
   }, [pathname]);
 
   const handleVerifyPassword = (e: React.FormEvent) => {
@@ -48,22 +47,13 @@ export default function MaintenanceGate({ children }: MaintenanceGateProps) {
     }
   };
 
-  // If loading/checking, render empty to avoid flash
-  if (checking) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
   // Admin pages are never blocked
   if (isAdminRoute) {
     return <>{children}</>;
   }
 
-  // If bypassed, render public page normally
-  if (bypass) {
+  // Cho phép truy cập ngay lập tức nếu chế độ bảo trì tắt (MAINTENANCE_MODE = false)
+  if (!MAINTENANCE_MODE || bypass) {
     return (
       <>
         <Header />
