@@ -1,5 +1,7 @@
 import { supabase } from "./supabase";
 import { Project, Story, TeamMember, Partner, ImpactStat, FinancialReport } from "@/types";
+import { stories as fallbackStories } from "@/data/stories";
+import { teamMembers as fallbackTeamMembers } from "@/data/team";
 
 export async function getProjects(): Promise<Project[]> {
   const { data, error } = await supabase
@@ -73,88 +75,99 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 }
 
 export async function getStories(): Promise<Story[]> {
-  const { data, error } = await supabase
-    .from("stories")
-    .select("*, story_categories(name)")
-    .eq("status", "published")
-    .order("created_at", { ascending: false });
+  try {
+    const { data, error } = await supabase
+      .from("stories")
+      .select("*, story_categories(name)")
+      .eq("status", "published")
+      .order("created_at", { ascending: false });
 
-  if (error) {
-    console.error("Error fetching stories:", error);
-    return [];
+    if (error || !data || data.length === 0) {
+      return fallbackStories;
+    }
+
+    return data.map((s: any) => ({
+      id: s.id,
+      title: s.title,
+      slug: s.slug,
+      excerpt: s.excerpt || "",
+      content: s.content || "",
+      coverImage: s.cover_image || "",
+      authorName: s.author_name || "",
+      storyType: s.story_categories?.name || s.story_type || "",
+      projectId: s.project_id || undefined,
+      featured: s.featured,
+      status: s.status,
+      publishedAt: s.published_at,
+      createdAt: s.created_at,
+      updatedAt: s.updated_at,
+    }));
+  } catch {
+    return fallbackStories;
   }
-
-  return (data || []).map((s: any) => ({
-    id: s.id,
-    title: s.title,
-    slug: s.slug,
-    excerpt: s.excerpt || "",
-    content: s.content || "",
-    coverImage: s.cover_image || "",
-    authorName: s.author_name || "",
-    storyType: s.story_categories?.name || s.story_type || "",
-    projectId: s.project_id || undefined,
-    featured: s.featured,
-    status: s.status,
-    publishedAt: s.published_at,
-    createdAt: s.created_at,
-    updatedAt: s.updated_at,
-  }));
 }
 
 export async function getStoryBySlug(slug: string): Promise<Story | null> {
-  const { data, error } = await supabase
-    .from("stories")
-    .select("*, story_categories(name)")
-    .eq("slug", slug)
-    .eq("status", "published")
-    .single();
+  try {
+    const { data, error } = await supabase
+      .from("stories")
+      .select("*, story_categories(name)")
+      .eq("slug", slug)
+      .eq("status", "published")
+      .single();
 
-  if (error || !data) {
-    console.error("Error fetching story by slug:", error);
-    return null;
+    if (error || !data) {
+      const fallback = fallbackStories.find((s) => s.slug === slug);
+      return fallback || null;
+    }
+
+    return {
+      id: data.id,
+      title: data.title,
+      slug: data.slug,
+      excerpt: data.excerpt || "",
+      content: data.content || "",
+      coverImage: data.cover_image || "",
+      authorName: data.author_name || "",
+      storyType: data.story_categories?.name || data.story_type || "",
+      projectId: data.project_id || undefined,
+      featured: data.featured,
+      status: data.status,
+      publishedAt: data.published_at,
+      createdAt: data.created_at,
+      updatedAt: data.updated_at,
+    };
+  } catch {
+    const fallback = fallbackStories.find((s) => s.slug === slug);
+    return fallback || null;
   }
-
-  return {
-    id: data.id,
-    title: data.title,
-    slug: data.slug,
-    excerpt: data.excerpt || "",
-    content: data.content || "",
-    coverImage: data.cover_image || "",
-    authorName: data.author_name || "",
-    storyType: data.story_categories?.name || data.story_type || "",
-    projectId: data.project_id || undefined,
-    featured: data.featured,
-    status: data.status,
-    publishedAt: data.published_at,
-    createdAt: data.created_at,
-    updatedAt: data.updated_at,
-  };
 }
 
 export async function getTeamMembers(): Promise<TeamMember[]> {
-  const { data, error } = await supabase
-    .from("team_members")
-    .select("*")
-    .eq("active", true)
-    .order("display_order", { ascending: true });
+  try {
+    const { data, error } = await supabase
+      .from("team_members")
+      .select("*")
+      .eq("active", true)
+      .order("display_order", { ascending: true });
 
-  if (error) {
-    console.error("Error fetching team members:", error);
-    return [];
+    if (error || !data || data.length === 0) {
+      return fallbackTeamMembers;
+    }
+
+    return data.map((t: any) => ({
+      id: t.id,
+      fullName: t.full_name,
+      role: t.role || "",
+      department: t.department || "",
+      bio: t.bio || "",
+      avatarUrl: t.avatar_url || "",
+      displayOrder: t.display_order,
+      active: t.active,
+    }));
+  } catch {
+    return fallbackTeamMembers;
   }
-
-  return (data || []).map((t: any) => ({
-    id: t.id,
-    fullName: t.full_name,
-    role: t.role || "",
-    department: t.department || "",
-    bio: t.bio || "",
-    avatarUrl: t.avatar_url || "",
-    displayOrder: t.display_order,
-    active: t.active,
-  }));
 }
 
 export async function getPartners(): Promise<Partner[]> {
