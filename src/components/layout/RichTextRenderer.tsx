@@ -80,7 +80,7 @@ export default function RichTextRenderer({ content }: RichTextRendererProps) {
 
       // Render standard paragraph with line breaks
       elements.push(
-        <p key={`p-${key}`} className="font-medium text-gray-700">
+        <p key={`p-${key}`} className="font-normal text-gray-700 leading-relaxed text-base md:text-lg text-justify mb-5">
           {text.split("\n").map((line, idx) => (
             <React.Fragment key={idx}>
               {idx > 0 && <br />}
@@ -144,7 +144,7 @@ export default function RichTextRenderer({ content }: RichTextRendererProps) {
       flushParagraph(i);
       flushList(i);
       elements.push(
-        <h3 key={`h3-${i}`} className="text-xl sm:text-2xl font-black text-primary tracking-tight mt-8 mb-2">
+        <h3 key={`h3-${i}`} className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight mt-8 mb-3">
           {parseInlineStyles(trimmed.slice(4))}
         </h3>
       );
@@ -155,7 +155,7 @@ export default function RichTextRenderer({ content }: RichTextRendererProps) {
       flushParagraph(i);
       flushList(i);
       elements.push(
-        <h2 key={`h2-${i}`} className="text-2xl sm:text-3xl font-black text-primary tracking-tight mt-10 mb-3">
+        <h2 key={`h2-${i}`} className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mt-10 mb-4">
           {parseInlineStyles(trimmed.slice(3))}
         </h2>
       );
