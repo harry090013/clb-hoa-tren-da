@@ -32,19 +32,159 @@ interface CommentItem {
   createdAt: string;
 }
 
+const SEED_COMMENTS_MAP: Record<string, CommentItem[]> = {
+  "story-4": [
+    {
+      id: "cmt-seed-4-1",
+      authorName: "Cô Thanh Nga (Đà Nẵng)",
+      content: "Thương các con quá, tuổi nhỏ làm việc nhỏ nhưng mang lại năng lượng rất tích cực. Những trải nghiệm thực tế như thế này quý hơn vạn bài học trên sách vở. Chúc các em và CLB luôn mạnh khỏe, bình an!",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-4-2",
+      authorName: "Anh Hoàng Nam (Quảng Nam)",
+      content: "Xem từng khung hình mà thấy ấm lòng lạ kỳ. Ánh mắt hồn nhiên của các em nhỏ vùng cao và sự chăm chút, nhiệt tình của các bạn nhỏ tình nguyện viên thật sự chạm đến trái tim người đọc.",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-4-3",
+      authorName: "Minh Thư",
+      content: "Thích nhất câu: 'Tuổi nhỏ làm việc nhỏ, nhưng những điều được gieo từ tuổi thơ có thể theo ta suốt một đời'. Mong Hoa Trên Đá sẽ có thêm nhiều hành trình đẹp và lan tỏa như thế này nữa ạ!",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-4-4",
+      authorName: "Phan Văn Lợi",
+      content: "Ủng hộ các bạn nhỏ! Nhìn các cháu biết thương người và biết chia sẻ từ bé thế này, phụ huynh chắc chắn rất an lòng và tự hào.",
+      createdAt: "03/09/2026",
+    },
+  ],
+  "bup-mang-non-tren-hanh-trinh-yeu-thuong": [
+    {
+      id: "cmt-seed-4-1",
+      authorName: "Cô Thanh Nga (Đà Nẵng)",
+      content: "Thương các con quá, tuổi nhỏ làm việc nhỏ nhưng mang lại năng lượng rất tích cực. Những trải nghiệm thực tế như thế này quý hơn vạn bài học trên sách vở. Chúc các em và CLB luôn mạnh khỏe, bình an!",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-4-2",
+      authorName: "Anh Hoàng Nam (Quảng Nam)",
+      content: "Xem từng khung hình mà thấy ấm lòng lạ kỳ. Ánh mắt hồn nhiên của các em nhỏ vùng cao và sự chăm chút, nhiệt tình của các bạn nhỏ tình nguyện viên thật sự chạm đến trái tim người đọc.",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-4-3",
+      authorName: "Minh Thư",
+      content: "Thích nhất câu: 'Tuổi nhỏ làm việc nhỏ, nhưng những điều được gieo từ tuổi thơ có thể theo ta suốt một đời'. Mong Hoa Trên Đá sẽ có thêm nhiều hành trình đẹp và lan tỏa như thế này nữa ạ!",
+      createdAt: "03/09/2026",
+    },
+    {
+      id: "cmt-seed-4-4",
+      authorName: "Phan Văn Lợi",
+      content: "Ủng hộ các bạn nhỏ! Nhìn các cháu biết thương người và biết chia sẻ từ bé thế này, phụ huynh chắc chắn rất an lòng và tự hào.",
+      createdAt: "03/09/2026",
+    },
+  ],
+  "story-1": [
+    {
+      id: "cmt-seed-1-1",
+      authorName: "Thầy Nguyễn Văn Thành",
+      content: "Cái tên Hoa Trên Đá mang theo một nghị lực và triết lý sống thật sâu sắc. Chúc các bạn trẻ luôn giữ vững ngọn lửa nhiệt huyết để tiếp tục đơm hoa giữa những miền sỏi đá gian khó.",
+      createdAt: "06/08/2026",
+    },
+    {
+      id: "cmt-seed-1-2",
+      authorName: "Lê Đình Trí",
+      content: "Nhớ những ngày đầu mọi người cặm cụi nhặt từng viên đá cuội về vẽ gây quỹ. Hôm nay nhìn thấy câu lạc bộ ngày một quy củ và bài bản, mình thấy thật tự hào!",
+      createdAt: "08/08/2026",
+    },
+  ],
+  "vi-sao-chung-minh-mang-ten-hoa-tren-da": [
+    {
+      id: "cmt-seed-1-1",
+      authorName: "Thầy Nguyễn Văn Thành",
+      content: "Cái tên Hoa Trên Đá mang theo một nghị lực và triết lý sống thật sâu sắc. Chúc các bạn trẻ luôn giữ vững ngọn lửa nhiệt huyết để tiếp tục đơm hoa giữa những miền sỏi đá gian khó.",
+      createdAt: "06/08/2026",
+    },
+    {
+      id: "cmt-seed-1-2",
+      authorName: "Lê Đình Trí",
+      content: "Nhớ những ngày đầu mọi người cặm cụi nhặt từng viên đá cuội về vẽ gây quỹ. Hôm nay nhìn thấy câu lạc bộ ngày một quy củ và bài bản, mình thấy thật tự hào!",
+      createdAt: "08/08/2026",
+    },
+  ],
+  "story-2": [
+    {
+      id: "cmt-seed-2-1",
+      authorName: "Trần Bảo Trân",
+      content: "Từng có dịp tham gia cùng các bạn trong các đợt hiến máu cứu người khẩn cấp tại Quế Sơn. Tinh thần trách nhiệm và sự xông xáo của ban điều hành rất đáng trân trọng.",
+      createdAt: "07/08/2026",
+    },
+    {
+      id: "cmt-seed-2-2",
+      authorName: "Quang Huy",
+      content: "Một hành trình dài và kiên trì. Làm thiện nguyện không khó ở lúc bắt đầu, khó nhất là đi được đường dài cùng nhau. Chúc Hoa Trên Đá ngày càng phát triển bền vững!",
+      createdAt: "10/08/2026",
+    },
+  ],
+  "truoc-khi-co-hoa-tren-da-chung-minh-da-di-qua-nhung-hanh-trinh-nao": [
+    {
+      id: "cmt-seed-2-1",
+      authorName: "Trần Bảo Trân",
+      content: "Từng có dịp tham gia cùng các bạn trong các đợt hiến máu cứu người khẩn cấp tại Quế Sơn. Tinh thần trách nhiệm và sự xông xáo của ban điều hành rất đáng trân trọng.",
+      createdAt: "07/08/2026",
+    },
+    {
+      id: "cmt-seed-2-2",
+      authorName: "Quang Huy",
+      content: "Một hành trình dài và kiên trì. Làm thiện nguyện không khó ở lúc bắt đầu, khó nhất là đi được đường dài cùng nhau. Chúc Hoa Trên Đá ngày càng phát triển bền vững!",
+      createdAt: "10/08/2026",
+    },
+  ],
+  "story-3": [
+    {
+      id: "cmt-seed-3-1",
+      authorName: "Chị Thu Hằng (Duy Xuyên)",
+      content: "4 mảng hoạt động rất thiết thực và sát với đời sống bà con mình. Nhất là nồi cháo dinh dưỡng tại Trung tâm y tế Duy Xuyên và học bổng cho học sinh nghèo. Rất mong được chung tay cùng CLB!",
+      createdAt: "06/08/2026",
+    },
+    {
+      id: "cmt-seed-3-2",
+      authorName: "Đặng Tuấn Anh",
+      content: "Rất hoan nghênh tính minh bạch của tổ chức. Thiện nguyện xuất phát từ tâm nhưng phải có cách làm khoa học và rõ ràng mới bền vững được. Ủng hộ Hoa Trên Đá hết mình!",
+      createdAt: "09/08/2026",
+    },
+  ],
+  "hoa-tren-da-se-lam-gi": [
+    {
+      id: "cmt-seed-3-1",
+      authorName: "Chị Thu Hằng (Duy Xuyên)",
+      content: "4 mảng hoạt động rất thiết thực và sát với đời sống bà con mình. Nhất là nồi cháo dinh dưỡng tại Trung tâm y tế Duy Xuyên và học bổng cho học sinh nghèo. Rất mong được chung tay cùng CLB!",
+      createdAt: "06/08/2026",
+    },
+    {
+      id: "cmt-seed-3-2",
+      authorName: "Đặng Tuấn Anh",
+      content: "Rất hoan nghênh tính minh bạch của tổ chức. Thiện nguyện xuất phát từ tâm nhưng phải có cách làm khoa học và rõ ràng mới bền vững được. Ủng hộ Hoa Trên Đá hết mình!",
+      createdAt: "09/08/2026",
+    },
+  ],
+};
+
 export default function StoryDetailClient({
   story,
   relatedStories,
 }: StoryDetailClientProps) {
+  const seedComments = SEED_COMMENTS_MAP[story.id] || SEED_COMMENTS_MAP[story.slug] || [];
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [likes, setLikes] = useState(24);
+  const [likes, setLikes] = useState(story.id === "story-4" || story.slug.includes("bup-mang-non") ? 38 : 28);
   const [hasLiked, setHasLiked] = useState(false);
   const [hasDisliked, setHasDisliked] = useState(false);
-  const [views, setViews] = useState(128);
+  const [views, setViews] = useState(story.id === "story-4" || story.slug.includes("bup-mang-non") ? 246 : 168);
   const [copied, setCopied] = useState(false);
 
-  // Comments state
-  const [comments, setComments] = useState<CommentItem[]>([]);
+  // Comments state initialized with seed comments
+  const [comments, setComments] = useState<CommentItem[]>(seedComments);
   const [commentName, setCommentName] = useState("");
   const [commentEmail, setCommentEmail] = useState("");
   const [commentContent, setCommentContent] = useState("");
@@ -67,7 +207,7 @@ export default function StoryDetailClient({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Load local likes & views
+  // Load local likes & views and merge user comments with seed comments
   useEffect(() => {
     try {
       const storedLikes = localStorage.getItem(`story_likes_${story.id}`);
@@ -77,19 +217,30 @@ export default function StoryDetailClient({
       if (storedLikes) setLikes(parseInt(storedLikes, 10));
       if (storedHasLiked === "true") setHasLiked(true);
 
-      const nextViews = storedViews ? parseInt(storedViews, 10) + 1 : 128 + Math.floor(Math.random() * 50);
+      const baseViews = story.id === "story-4" || story.slug.includes("bup-mang-non") ? 246 : 168;
+      const nextViews = storedViews ? parseInt(storedViews, 10) + 1 : baseViews + Math.floor(Math.random() * 20);
       setViews(nextViews);
       localStorage.setItem(`story_views_${story.id}`, nextViews.toString());
 
-      // Load comments
+      // Load comments & merge with seed comments
+      const initialSeed = SEED_COMMENTS_MAP[story.id] || SEED_COMMENTS_MAP[story.slug] || [];
       const storedComments = localStorage.getItem(`story_comments_${story.id}`);
       if (storedComments) {
-        setComments(JSON.parse(storedComments));
+        const parsed: CommentItem[] = JSON.parse(storedComments);
+        const combined = [...parsed];
+        initialSeed.forEach((sc) => {
+          if (!combined.some((c) => c.id === sc.id)) {
+            combined.push(sc);
+          }
+        });
+        setComments(combined);
+      } else {
+        setComments(initialSeed);
       }
     } catch {
       // Ignore storage errors
     }
-  }, [story.id]);
+  }, [story.id, story.slug]);
 
   // Handle like toggle
   const handleLike = () => {
