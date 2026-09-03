@@ -91,7 +91,7 @@ export default async function Home() {
               </div>
               <h3 className="text-xl font-bold text-gray-900">Chung tay vì cộng đồng</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Đồng hành cùng học sinh nghèo, người dân tại các bản làng xa xôi thông qua các chương trình cung cấp cơ sở vật chất, nước sạch và giáo dục.
+                Đồng hành cùng bệnh nhân nghèo, học sinh hiếu học và bà con vùng cao qua các chương trình phát cháo bệnh viện, thắp sáng bản làng và hỗ trợ khẩn cấp.
               </p>
             </div>
             <div className="bg-surface p-8 rounded-2xl border border-gray-100 shadow-sm space-y-4">

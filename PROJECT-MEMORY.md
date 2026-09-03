@@ -29,7 +29,12 @@
    - Đã tối ưu hóa hình ảnh sang WebP và định dạng rich text đẹp mắt.
 3. **Dự án & Minh bạch tài chính**:
    - Đã dọn sạch các dự án và báo cáo thu/chi test. Sẵn sàng nhập số liệu thực tế khi CLB phát động chiến dịch mới.
-4. **Địa chỉ liên hệ**:
+4. **4 Mảng Hoạt Động Cốt Lõi**:
+   - *Phát cháo tình nguyện tại các bệnh viện*: Nấu và phát cháo định kỳ tại các bệnh viện Duy Xuyên và Quế Sơn, mở rộng tương lai.
+   - *Chương trình hành trình vùng cao*: Lắp đặt đèn năng lượng mặt trời, nấu ăn dinh dưỡng cho học sinh và bà con, trao áo ấm và quà tặng.
+   - *Hỗ trợ học sinh nghèo vượt khó hằng tháng*: Trao học bổng và kinh phí hỗ trợ học tập định kỳ hằng tháng.
+   - *Hỗ trợ các trường hợp khẩn cấp & tai nạn*: Kêu gọi và tiếp sức kịp thời cho các ca tai nạn đột xuất, bệnh hiểm nghèo và thiên tai.
+5. **Địa chỉ liên hệ**:
    - `Xóm Trại, Thôn Quế Xuân, Xã Xuân Phú, TP Đà Nẵng`
    - Hotline: `0379 163 913`
    - Email: `hoatrendaclb@gmail.com`
