@@ -2,21 +2,27 @@ import { Partner } from '../types';
 
 export const partners: Partner[] = [
   {
-    id: 'pt1',
-    name: 'Quỹ Từ Thiện Sen Xanh',
-    logoUrl: 'https://images.unsplash.com/photo-1599305445671-ac291c95aba9?auto=format&fit=crop&q=80&w=150',
-    description: 'Đối tác chiến lược tài trợ các trang thiết bị lọc nước sạch.',
-    partnerType: 'Quỹ đầu tư cộng đồng',
+    id: 'partner-1',
+    name: 'CLB Dấu Chân Tình Nguyện Quảng Ngãi',
+    logoUrl: '',
+    partnerType: 'Đối tác đồng hành thiện nguyện',
     displayOrder: 1,
     active: true,
   },
   {
-    id: 'pt2',
-    name: 'Nhà xuất bản Kim Đồng',
-    logoUrl: 'https://images.unsplash.com/photo-1599305445671-ac291c95aba9?auto=format&fit=crop&q=80&w=150',
-    description: 'Đồng hành cung cấp hàng nghìn tựa sách thiếu nhi giảm giá cho dự án tủ sách.',
-    partnerType: 'Nhà tài trợ hiện vật',
+    id: 'partner-2',
+    name: 'CLB Ngân Hàng Máu Sống Quế Xuân 2',
+    logoUrl: '',
+    partnerType: 'Đơn vị phối hợp vì cộng đồng',
     displayOrder: 2,
     active: true,
-  }
+  },
+  {
+    id: 'partner-3',
+    name: 'Mạng Lưới Tình Nguyện Quốc Gia Miền Trung',
+    logoUrl: '',
+    partnerType: 'Mạng lưới kết nối bảo trợ',
+    displayOrder: 3,
+    active: true,
+  },
 ];

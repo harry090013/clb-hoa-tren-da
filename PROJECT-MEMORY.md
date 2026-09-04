@@ -53,6 +53,14 @@
    - Toàn bộ nội dung chữ trên website (đoạn văn giới thiệu, bài viết, mô tả dự án, tóm tắt, điều khoản) đều được căn lề 2 bên (`text-justify`, `text-align: justify; text-justify: inter-word;`) mang lại vẻ ngoài ấn loát chỉn chu, chuyên nghiệp.
    - Các tiêu đề chính, huy hiệu, số liệu thống kê và thẻ banner phù hợp được căn giữa (`text-center`).
    - Tuyệt đối không để nội dung thân bài và mô tả bị căn trái lệch lạc.
+8. **Dấu ấn hành trình & Đối tác đồng hành (Cơ chế dữ liệu an toàn)**:
+   - Dữ liệu Những con số ấn tượng tại `src/data/stats.ts`:
+     + 16+ Hành trình kết nối yêu thương
+     + 120+ Tình nguyện viên gắn kết
+     + 3.500+ Bữa ăn & Phần quà trao gửi
+     + 18+ Điểm tựa & Bản làng sẻ chia
+   - Dữ liệu Đối tác tại `src/data/partners.ts`: CLB Dấu Chân Tình Nguyện Quảng Ngãi, CLB Ngân Hàng Máu Sống Quế Xuân 2, Mạng Lưới Tình Nguyện Quốc Gia Miền Trung.
+   - Cơ chế fallback cache trong `src/lib/data.ts`: Tự động nạp dữ liệu chuẩn xác nếu Supabase tạm thời gián đoạn.
 
 ## Last Updated
-2026-09-03
+2026-09-04

@@ -2,6 +2,8 @@ import { supabase } from "./supabase";
 import { Project, Story, TeamMember, Partner, ImpactStat, FinancialReport } from "@/types";
 import { stories as fallbackStories } from "@/data/stories";
 import { teamMembers as fallbackTeamMembers } from "@/data/team";
+import { impactStats as fallbackImpactStats } from "@/data/stats";
+import { partners as fallbackPartners } from "@/data/partners";
 
 export async function getProjects(): Promise<Project[]> {
   const { data, error } = await supabase
@@ -171,49 +173,57 @@ export async function getTeamMembers(): Promise<TeamMember[]> {
 }
 
 export async function getPartners(): Promise<Partner[]> {
-  const { data, error } = await supabase
-    .from("partners")
-    .select("*")
-    .eq("active", true)
-    .order("display_order", { ascending: true });
+  try {
+    const { data, error } = await supabase
+      .from("partners")
+      .select("*")
+      .eq("active", true)
+      .order("display_order", { ascending: true });
 
-  if (error) {
-    console.error("Error fetching partners:", error);
-    return [];
+    if (error || !data || data.length === 0) {
+      if (error) console.error("Error fetching partners:", error);
+      return fallbackPartners;
+    }
+
+    return data.map((p: any) => ({
+      id: p.id,
+      name: p.name,
+      logoUrl: p.logo_url || "",
+      websiteUrl: p.website_url || undefined,
+      description: p.description || undefined,
+      partnerType: p.partner_type || "",
+      displayOrder: p.display_order,
+      active: p.active,
+    }));
+  } catch {
+    return fallbackPartners;
   }
-
-  return (data || []).map((p: any) => ({
-    id: p.id,
-    name: p.name,
-    logoUrl: p.logo_url || "",
-    websiteUrl: p.website_url || undefined,
-    description: p.description || undefined,
-    partnerType: p.partner_type || "",
-    displayOrder: p.display_order,
-    active: p.active,
-  }));
 }
 
 export async function getImpactStats(): Promise<ImpactStat[]> {
-  const { data, error } = await supabase
-    .from("impact_stats")
-    .select("*")
-    .eq("is_public", true)
-    .order("display_order", { ascending: true });
+  try {
+    const { data, error } = await supabase
+      .from("impact_stats")
+      .select("*")
+      .eq("is_public", true)
+      .order("display_order", { ascending: true });
 
-  if (error) {
-    console.error("Error fetching impact stats:", error);
-    return [];
+    if (error || !data || data.length === 0) {
+      if (error) console.error("Error fetching impact stats:", error);
+      return fallbackImpactStats;
+    }
+
+    return data.map((i: any) => ({
+      id: i.id,
+      key: i.key,
+      label: i.label,
+      value: Number(i.value),
+      suffix: i.suffix || undefined,
+      displayOrder: i.display_order,
+    }));
+  } catch {
+    return fallbackImpactStats;
   }
-
-  return (data || []).map((i: any) => ({
-    id: i.id,
-    key: i.key,
-    label: i.label,
-    value: Number(i.value),
-    suffix: i.suffix || undefined,
-    displayOrder: i.display_order,
-  }));
 }
 
 export async function getFinancialReports(): Promise<FinancialReport[]> {

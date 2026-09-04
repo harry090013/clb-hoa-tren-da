@@ -130,7 +130,7 @@ export default async function Home() {
             {stats.map((stat) => (
               <div key={stat.id} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
                 <p className="text-4xl sm:text-5xl font-extrabold text-accent">
-                  {stat.value}
+                  {stat.value.toLocaleString("vi-VN")}
                   {stat.suffix}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-gray-600">{stat.label}</p>
