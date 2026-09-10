@@ -2,6 +2,35 @@ import { Story } from '../types';
 
 export const stories: Story[] = [
   {
+    id: 'story-7',
+    title: 'Nhìn lại hành trình Kết nối yêu thương 17: Một ngày ở Trà Leng',
+    slug: 'ket-noi-yeu-thuong-17-tra-leng',
+    excerpt: 'Chuyến đi một ngày đến với xã Trà Leng (Nam Trà My) của CLB Hoa Trên Đá đọng lại biết bao trăn trở và xúc cảm về những bước chân lặng thầm giữ đất nơi biên cương Tổ quốc.',
+    content: `Chúng mình từng tự hỏi, năm năm hay mười năm nữa, khi có dịp quay trở lại những bản làng heo hút nơi rẻo cao này, cảm xúc trong lòng sẽ ra sao? Lúc ấy, nếu có thể mang theo một chiếc máy chiếu thật lớn, dựng giữa khoảng sân trường bản nhỏ và bật lại những thước phim, những bức ảnh của ngày hôm nay, rồi cùng ngồi quây quần bên bếp lửa với bà con và những đứa trẻ lúc đó đã trưởng thành, có lẽ đó sẽ là khoảnh khắc đong đầy ý nghĩa nhất của hành trình kết nối yêu thương.
+
+Hành trình Kết nối yêu thương lần thứ 17 của Câu lạc bộ Thiện nguyện Hoa Trên Đá đưa chúng mình đến với xã Trà Leng — mảnh đất từng đi qua bao biến động của thiên tai nhưng vẫn kiên cường đứng vững giữa đại ngàn Nam Trà My.
+
+Nhìn quanh, đất nước ta đang từng ngày chuyển mình phát triển. Nhiều ngọn đồi đã được thắp sáng bởi ánh điện, giao thông thuận tiện hơn, đồng bào các dân tộc thiểu số cũng dần được tiếp cận với công nghệ và đời sống văn minh. Thế nhưng, nếu chịu khó đi sâu hơn vào những nóc làng xa xôi cách trở, ta mới nhận ra rằng sự đủ đầy dường như vẫn chưa thể chạm tới mọi ngóc ngách. Ở đó, manh áo mặc vẫn chưa đủ ấm khi mùa đông về, con đường đến trường của các em nhỏ vẫn phải vượt qua hai, ba ngọn đồi trơn trượt, và những bữa cơm hằng ngày vẫn đơn sơ đến thắt lòng.
+
+https://youtu.be/neg_bs8VeZ4
+
+Đôi khi, người ở đồng bằng vẫn tự hỏi: vì sao điều kiện sống khó khăn đến vậy mà bà con không di dời xuống vùng thấp để mưu sinh? Nhưng nếu lắng lòng lại để suy ngẫm, ta sẽ hiểu rằng đây là nơi họ sinh ra, là quê hương máu thịt và là cội nguồn của biết bao thế hệ. Và sâu xa hơn hết, chính sự kiên cường bám bản, bám rừng của đồng bào vùng cao qua năm tháng cũng là cách thầm lặng mà thiêng liêng nhất để giữ từng tấc đất, bảo vệ bờ cõi biên cương của Tổ quốc ta.
+
+Nhiều người thấy chúng mình rong ruổi trên những chiếc xe máy cũ kỹ lấm lem bùn đất, cứ ngỡ đó là sở thích đi phượt của những người trẻ. Nhưng chỉ những ai từng đặt chân lên những cung đường này mới hiểu: để đến được với những nóc nhà cheo leo giữa lưng chừng trời, xe ô tô hoàn toàn bất lực. Chỉ có đôi bánh xe máy và những bước chân cuốc bộ mới có thể len lỏi qua từng vách đá, bùn lầy để mang quà và tình cảm đến tận tay từng em nhỏ.
+
+Một ngày ở Trà Leng trôi qua thật nhanh, nhưng những nụ cười trong trẻo và cái nắm tay ấm áp của bà con nơi đây sẽ còn đọng lại rất lâu. Cho đi không làm chúng ta vơi đi, mà là cách để yêu thương được gieo mầm và lớn lên trong trái tim của mỗi con người.
+
+Hoa Trên Đá — Từ đá nở hoa, từ tâm lan tỏa.`,
+    coverImage: '/images/ketnoiyeuthuong17/knyt17_cover.webp',
+    authorName: 'Ban Điều Hành',
+    storyType: 'Nhật ký hành trình',
+    featured: true,
+    status: 'published',
+    publishedAt: '2026-09-05T08:00:00Z',
+    createdAt: '2026-09-05T08:00:00Z',
+    updatedAt: '2026-09-05T08:00:00Z',
+  },
+  {
     id: 'story-6',
     title: 'Lời kêu gọi yêu thương: Xin chung tay giúp đỡ chị Lê Thị Liêu',
     slug: 'loi-keu-goi-giup-do-chi-le-thi-lieu-xuong-thuy-tinh-tai-nan',

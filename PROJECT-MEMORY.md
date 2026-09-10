@@ -26,7 +26,8 @@
    - Nguyễn Khánh Tuấn (Trưởng Ban Hậu Cần)
    - Nguyễn Quang Hiếu (Trưởng Ban Truyền Thông)
    - Ảnh đại diện: Đã crop vuông 400x400 WebP tại `/images/bdh_*.webp`.
-2. **Bài viết / Câu chuyện (6 bài chính thức)**:
+2. **Bài viết / Câu chuyện (7 bài chính thức)**:
+   - *Nhìn lại hành trình Kết nối yêu thương 17: Một ngày ở Trà Leng* (Tác giả: Ban Điều Hành, nhúng video YouTube thực tế, ảnh bìa WebP tại `/images/ketnoiyeuthuong17/knyt17_cover.webp`, đăng 05/09/2026)
    - *Lời kêu gọi yêu thương: Xin chung tay giúp đỡ chị Lê Thị Liêu* (Tác giả: Ban Điều Hành, nhúng video YouTube phóng sự, ảnh bìa WebP tại `/images/hoancanh/chi_lieu.webp`, đăng 03/09/2026)
    - *Búp măng non trên hành trình yêu thương* (Tác giả: Hoa Trên Đá, 4 ảnh minh họa WebP tại `/images/bupmangnon/`, đăng 03/09/2026)
    - *Nhìn lại hành trình Kết nối yêu thương 16: Nóc Ông Dũ (Trà Vân)* (Tác giả: Ban Điều Hành, 7 ảnh minh họa WebP tại `/images/ketnoiyeuthuong16/`, đăng 19/08/2026)

@@ -5,7 +5,7 @@ export const impactStats: ImpactStat[] = [
     id: 'stat-1',
     key: 'journeys',
     label: 'Hành trình kết nối yêu thương',
-    value: 16,
+    value: 17,
     suffix: '+',
     displayOrder: 1,
   },

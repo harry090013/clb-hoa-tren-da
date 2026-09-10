@@ -33,6 +33,46 @@ interface CommentItem {
 }
 
 const SEED_COMMENTS_MAP: Record<string, CommentItem[]> = {
+  "story-7": [
+    {
+      id: "cmt-seed-7-1",
+      authorName: "Thầy Đặng Quốc Tuấn (Nam Trà My)",
+      content: "Cảm ơn các bạn trẻ Hoa Trên Đá đã không ngại đường sá hiểm trở để về với bà con Trà Leng. Xem video mà xúc động vô cùng. Cầu mong CLB chân cứng đá mềm để tiếp tục nhiều hành trình ý nghĩa nữa!",
+      createdAt: "05/09/2026",
+    },
+    {
+      id: "cmt-seed-7-2",
+      authorName: "Ngọc Ánh (TNV)",
+      content: "Đoạn đường dốc trơn trượt ngồi sau xe máy mà thót tim, nhưng lúc nhìn thấy nụ cười của các em nhỏ khi nhận quà thì mọi mệt mỏi tan biến hết. Tự hào được đồng hành cùng hành trình 17!",
+      createdAt: "06/09/2026",
+    },
+    {
+      id: "cmt-seed-7-3",
+      authorName: "Bác Hai (Quảng Nam)",
+      content: "Thích nhất góc nhìn: đồng bào vùng cao ở đó là đang thầm lặng giữ đất, giữ bờ cõi cho non sông. Một bài viết rất sâu sắc và nhân văn của người trẻ hôm nay.",
+      createdAt: "06/09/2026",
+    },
+  ],
+  "ket-noi-yeu-thuong-17-tra-leng": [
+    {
+      id: "cmt-seed-7-1",
+      authorName: "Thầy Đặng Quốc Tuấn (Nam Trà My)",
+      content: "Cảm ơn các bạn trẻ Hoa Trên Đá đã không ngại đường sá hiểm trở để về với bà con Trà Leng. Xem video mà xúc động vô cùng. Cầu mong CLB chân cứng đá mềm để tiếp tục nhiều hành trình ý nghĩa nữa!",
+      createdAt: "05/09/2026",
+    },
+    {
+      id: "cmt-seed-7-2",
+      authorName: "Ngọc Ánh (TNV)",
+      content: "Đoạn đường dốc trơn trượt ngồi sau xe máy mà thót tim, nhưng lúc nhìn thấy nụ cười của các em nhỏ khi nhận quà thì mọi mệt mỏi tan biến hết. Tự hào được đồng hành cùng hành trình 17!",
+      createdAt: "06/09/2026",
+    },
+    {
+      id: "cmt-seed-7-3",
+      authorName: "Bác Hai (Quảng Nam)",
+      content: "Thích nhất góc nhìn: đồng bào vùng cao ở đó là đang thầm lặng giữ đất, giữ bờ cõi cho non sông. Một bài viết rất sâu sắc và nhân văn của người trẻ hôm nay.",
+      createdAt: "06/09/2026",
+    },
+  ],
   "story-6": [
     {
       id: "cmt-seed-6-1",
