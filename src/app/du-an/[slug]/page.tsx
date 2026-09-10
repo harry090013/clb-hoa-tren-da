@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     : `${siteUrl}${project.coverImage}`;
 
   return {
-    title: `${project.title} | CLB Thiện nguyện Hoa Trên Đá`,
+    title: project.title,
     description: project.excerpt || "Dự án thiện nguyện của CLB Hoa Trên Đá.",
     alternates: {
       canonical: `${siteUrl}/du-an/${project.slug}`,
@@ -46,7 +46,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "website",
       images: [
         {
-          url: coverUrl,
+          url: `${coverUrl}?v=2`,
+          secureUrl: `${coverUrl}?v=2`,
           width: 1200,
           height: 630,
           alt: project.title,
@@ -57,7 +58,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: "summary_large_image",
       title: project.title,
       description: project.excerpt,
-      images: [coverUrl],
+      images: [`${coverUrl}?v=2`],
     },
   };
 }

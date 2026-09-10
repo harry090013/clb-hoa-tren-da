@@ -3,7 +3,7 @@ import { projects } from "@/data/projects";
 import { stories } from "@/data/stories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://hoatrenda.org";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://clb-hoa-tren-da.vercel.app";
 
   const staticRoutes = [
     "",

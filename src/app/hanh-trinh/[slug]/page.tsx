@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const fullImageUrl = jpgImage.startsWith("http") ? jpgImage : `${siteUrl}${jpgImage}`;
 
   return {
-    title: `${story.title} | CLB Thiện nguyện Hoa Trên Đá`,
+    title: story.title,
     description: story.excerpt || "Câu chuyện hành trình thiện nguyện của CLB Hoa Trên Đá.",
     alternates: {
       canonical: `${siteUrl}/hanh-trinh/${story.slug}`,
@@ -47,7 +47,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       authors: [story.authorName || "CLB Hoa Trên Đá"],
       images: [
         {
-          url: fullImageUrl,
+          url: `${fullImageUrl}?v=2`,
+          secureUrl: `${fullImageUrl}?v=2`,
           width: 1200,
           height: 630,
           alt: story.title,
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: "summary_large_image",
       title: story.title,
       description: story.excerpt,
-      images: [fullImageUrl],
+      images: [`${fullImageUrl}?v=2`],
     },
   };
 }
