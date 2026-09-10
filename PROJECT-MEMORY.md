@@ -56,12 +56,16 @@
    - Tuyệt đối không để nội dung thân bài và mô tả bị căn trái lệch lạc.
 8. **Dấu ấn hành trình & Đối tác đồng hành (Cơ chế dữ liệu an toàn)**:
    - Dữ liệu Những con số ấn tượng tại `src/data/stats.ts`:
-     + 16+ Hành trình kết nối yêu thương
+     + 17+ Hành trình kết nối yêu thương
      + 120+ Tình nguyện viên gắn kết
      + 3.500+ Bữa ăn & Phần quà trao gửi
      + 18+ Điểm tựa & Bản làng sẻ chia
    - Dữ liệu Đối tác tại `src/data/partners.ts`: CLB Dấu Chân Tình Nguyện Quảng Ngãi, CLB Ngân Hàng Máu Sống Quế Xuân 2, Mạng Lưới Tình Nguyện Quốc Gia Miền Trung.
    - Cơ chế fallback cache trong `src/lib/data.ts`: Tự động nạp dữ liệu chuẩn xác nếu Supabase tạm thời gián đoạn.
+9. **Cấu hình OpenGraph Thumbnail chia sẻ mạng xã hội (Facebook, Messenger, Zalo)**:
+   - `metadataBase` được cấu hình chuẩn xác theo `process.env.NEXT_PUBLIC_SITE_URL || 'https://clb-hoa-tren-da.vercel.app'`.
+   - Chuẩn hóa toàn bộ ảnh chia sẻ OpenGraph sang định dạng JPEG 1200x630 px (`.jpg`), giải quyết dứt điểm việc bot crawler của Facebook/Messenger từ chối hoặc không parse được file `.webp`.
+   - Đầy đủ thông số `og:image:width`, `og:image:height`, `og:image:type: 'image/jpeg'`, `twitter:card: 'summary_large_image'`, hỗ trợ tự động cả bài viết (`/hanh-trinh/[slug]`) và dự án (`/du-an/[slug]`).
 
 ## Last Updated
-2026-09-04
+2026-09-10

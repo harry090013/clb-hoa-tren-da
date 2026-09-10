@@ -24,14 +24,42 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://clb-hoa-tren-da.vercel.app";
+  const jpgImage = story.coverImage.endsWith(".webp")
+    ? story.coverImage.replace(/\.webp$/, ".jpg")
+    : story.coverImage;
+  const fullImageUrl = jpgImage.startsWith("http") ? jpgImage : `${siteUrl}${jpgImage}`;
+
   return {
     title: `${story.title} | CLB Thiện nguyện Hoa Trên Đá`,
     description: story.excerpt || "Câu chuyện hành trình thiện nguyện của CLB Hoa Trên Đá.",
+    alternates: {
+      canonical: `${siteUrl}/hanh-trinh/${story.slug}`,
+    },
     openGraph: {
       title: story.title,
       description: story.excerpt,
-      images: [story.coverImage],
+      url: `${siteUrl}/hanh-trinh/${story.slug}`,
+      siteName: "CLB Thiện nguyện Hoa Trên Đá",
+      locale: "vi_VN",
       type: "article",
+      publishedTime: story.publishedAt,
+      authors: [story.authorName || "CLB Hoa Trên Đá"],
+      images: [
+        {
+          url: fullImageUrl,
+          width: 1200,
+          height: 630,
+          alt: story.title,
+          type: "image/jpeg",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: story.title,
+      description: story.excerpt,
+      images: [fullImageUrl],
     },
   };
 }

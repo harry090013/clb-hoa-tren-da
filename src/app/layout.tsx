@@ -10,8 +10,10 @@ const beVietnamPro = Be_Vietnam_Pro({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://clb-hoa-tren-da.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hoatrenda.org"),
+  metadataBase: new URL(siteUrl),
   title: {
     template: "%s | CLB Thiện nguyện Hoa Trên Đá",
     default: "CLB Thiện nguyện Hoa Trên Đá — Từ đá nở hoa, Từ tâm lan tỏa",
@@ -21,10 +23,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CLB Thiện nguyện Hoa Trên Đá",
     description: "Từ đá nở hoa, Từ tâm lan tỏa - Kết nối yêu thương đến mọi miền.",
-    url: "https://hoatrenda.org",
-    siteName: "Hoa Trên Đá",
+    url: siteUrl,
+    siteName: "CLB Thiện nguyện Hoa Trên Đá",
     locale: "vi_VN",
     type: "website",
+    images: [
+      {
+        url: "/images/og-share.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CLB Thiện nguyện Hoa Trên Đá",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CLB Thiện nguyện Hoa Trên Đá",
+    description: "Từ đá nở hoa, Từ tâm lan tỏa - Kết nối yêu thương đến mọi miền.",
+    images: ["/images/og-share.jpg"],
   },
 };
 

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { MapPin, Calendar, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
+import type { Metadata } from "next";
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -10,7 +12,54 @@ interface PageProps {
 export async function generateStaticParams() {
   const projectsList = await getProjects();
   return projectsList.map((p) => ({
+    slug: p.slug,
   }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: "Không tìm thấy dự án | Hoa Trên Đá",
+    };
+  }
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://clb-hoa-tren-da.vercel.app";
+  const coverUrl = project.coverImage.startsWith("http")
+    ? project.coverImage
+    : `${siteUrl}${project.coverImage}`;
+
+  return {
+    title: `${project.title} | CLB Thiện nguyện Hoa Trên Đá`,
+    description: project.excerpt || "Dự án thiện nguyện của CLB Hoa Trên Đá.",
+    alternates: {
+      canonical: `${siteUrl}/du-an/${project.slug}`,
+    },
+    openGraph: {
+      title: project.title,
+      description: project.excerpt,
+      url: `${siteUrl}/du-an/${project.slug}`,
+      siteName: "CLB Thiện nguyện Hoa Trên Đá",
+      locale: "vi_VN",
+      type: "website",
+      images: [
+        {
+          url: coverUrl,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.excerpt,
+      images: [coverUrl],
+    },
+  };
 }
 
 export const revalidate = 60;
