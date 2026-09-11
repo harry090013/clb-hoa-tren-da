@@ -26,7 +26,8 @@
    - Nguyễn Khánh Tuấn (Trưởng Ban Hậu Cần)
    - Nguyễn Quang Hiếu (Trưởng Ban Truyền Thông)
    - Ảnh đại diện: Đã crop vuông 400x400 WebP tại `/images/bdh_*.webp`.
-2. **Bài viết / Câu chuyện (7 bài chính thức)**:
+2. **Bài viết / Câu chuyện (8 bài chính thức)**:
+   - *Nồi cháo tình nguyện ấm lòng người bệnh tại Bệnh viện Quế Sơn* (Tác giả: Ban Điều Hành, tri ân vợ chồng anh Trương Hoàng Long, nhúng video YouTube thực tế, ảnh bìa WebP & JPEG 1200x630 tại `/images/chao_que_son/chao_cover.*`, đăng 10/09/2026)
    - *Nhìn lại hành trình Kết nối yêu thương 17: Một ngày ở Trà Leng* (Tác giả: Ban Điều Hành, nhúng video YouTube thực tế, ảnh bìa WebP tại `/images/ketnoiyeuthuong17/knyt17_cover.webp`, đăng 05/09/2026)
    - *Lời kêu gọi yêu thương: Xin chung tay giúp đỡ chị Lê Thị Liêu* (Tác giả: Ban Điều Hành, nhúng video YouTube phóng sự, ảnh bìa WebP tại `/images/hoancanh/chi_lieu.webp`, đăng 03/09/2026)
    - *Búp măng non trên hành trình yêu thương* (Tác giả: Hoa Trên Đá, 4 ảnh minh họa WebP tại `/images/bupmangnon/`, đăng 03/09/2026)
@@ -58,7 +59,7 @@
    - Dữ liệu Những con số ấn tượng tại `src/data/stats.ts`:
      + 17+ Hành trình kết nối yêu thương
      + 120+ Tình nguyện viên gắn kết
-     + 3.500+ Bữa ăn & Phần quà trao gửi
+     + 3.800+ Bữa ăn & Phần quà trao gửi
      + 18+ Điểm tựa & Bản làng sẻ chia
    - Dữ liệu Đối tác tại `src/data/partners.ts`: CLB Dấu Chân Tình Nguyện Quảng Ngãi, CLB Ngân Hàng Máu Sống Quế Xuân 2, Mạng Lưới Tình Nguyện Quốc Gia Miền Trung.
    - Cơ chế fallback cache trong `src/lib/data.ts`: Tự động nạp dữ liệu chuẩn xác nếu Supabase tạm thời gián đoạn.

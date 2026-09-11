@@ -2,6 +2,37 @@ import { Story } from '../types';
 
 export const stories: Story[] = [
   {
+    id: 'story-8',
+    title: 'Nồi cháo tình nguyện ấm lòng người bệnh tại Bệnh viện Quế Sơn',
+    slug: 'chao-tinh-nguyen-benh-vien-que-son',
+    excerpt: 'Những bát cháo nóng hổi chan chứa tình yêu thương được trao tận tay các bệnh nhân và thân nhân nghèo tại Trung tâm Y tế huyện Quế Sơn trong buổi sáng mùa thu ấm áp.',
+    content: `Có những sớm mai thức dậy, niềm hạnh phúc giản dị chỉ gói trọn trong một làn khói nghi ngút bốc lên từ nồi cháo thơm lừng, cùng những nụ cười rạng rỡ của bà con lao động nghèo nơi hành lang bệnh viện.
+
+Sáng ngày 10/09/2026, các thành viên và tình nguyện viên Câu lạc bộ Thiện nguyện Hoa Trên Đá đã có mặt từ rất sớm tại khu vực Bệnh viện huyện Quế Sơn (Trung tâm Y tế huyện Quế Sơn) để cùng nhau chuẩn bị và trao gửi những phần cháo tình nguyện nóng sốt, đủ đầy dinh dưỡng đến tận tay các cô chú, anh chị bệnh nhân cùng thân nhân đang điều trị tại đây.
+
+Hành trình thiện nguyện lần này nhận được sự phát tâm và chủ công hỗ trợ nhiệt thành từ gia đình vợ chồng anh Trương Hoàng Long. Chính từ sự chung tay đầy nghĩa tình ấy, từng muỗng cháo thơm ngon, từng hạt gạo nở đều và gia vị nêm nếm bằng cả tấm lòng đã được trao đi trong sự ấm áp và trân quý khôn cùng.
+
+https://youtu.be/8jWAWpab_nw
+
+Đối với những người đang từng ngày giành giật sức khỏe trên giường bệnh, hay những người nhà bệnh nhân phải thức trắng đêm chăm sóc người thân, một bữa sáng nóng hổi không chỉ giúp họ vơi bớt một phần chi phí sinh hoạt đắt đỏ nơi viện phí, mà còn là liều thuốc tinh thần tiếp thêm niềm tin, nghị lực để vượt qua cơn bạo bệnh.
+
+Phát cháo tình nguyện tại các cơ sở y tế là một trong bốn mảng hoạt động cứu trợ trọng tâm mà Hoa Trên Đá luôn nỗ lực duy trì đều đặn. Định kỳ hằng tháng, câu lạc bộ đều tổ chức từ 1 đến 2 đợt phát cháo tại khu vực Bệnh viện Quế Sơn và Bệnh viện Duy Xuyên, lan tỏa ngọn lửa sẻ chia đến những hoàn cảnh ngặt nghèo nhất ngay trên mảnh đất quê hương.
+
+CLB Thiện nguyện Hoa Trên Đá luôn rộng mở cánh cửa và sẵn sàng làm cầu nối tin cậy để đồng hành, phối hợp cùng quý Mạnh thường quân, các nhà hảo tâm và các gia đình thiện nguyện gần xa muốn kết nối gieo duyên yêu thương. Dù là một chút công sức nấu nướng hay sự tiếp sức về kinh phí, vật phẩm, mọi tấm lòng đều là viên gạch quý giá xây đắp nên những giá trị bền vững cho cộng đồng.
+
+Xin trân trọng cảm ơn vợ chồng anh Trương Hoàng Long cùng tất cả các bạn tình nguyện viên đã thức khuya dậy sớm để mang đến một buổi sáng thật trọn vẹn và ý nghĩa. Cùng chúng mình tiếp tục chung tay gieo mầm yêu thương nơi đá núi và bệnh viện nhé!
+
+Hoa Trên Đá — Từ đá nở hoa, từ tâm lan tỏa.`,
+    coverImage: '/images/chao_que_son/chao_cover.webp',
+    authorName: 'Ban Điều Hành',
+    storyType: 'Cháo tình nguyện',
+    featured: true,
+    status: 'published',
+    publishedAt: '2026-09-10T08:00:00Z',
+    createdAt: '2026-09-10T08:00:00Z',
+    updatedAt: '2026-09-10T08:00:00Z',
+  },
+  {
     id: 'story-7',
     title: 'Nhìn lại hành trình Kết nối yêu thương 17: Một ngày ở Trà Leng',
     slug: 'ket-noi-yeu-thuong-17-tra-leng',

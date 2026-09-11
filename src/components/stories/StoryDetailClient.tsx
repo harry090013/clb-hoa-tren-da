@@ -33,6 +33,46 @@ interface CommentItem {
 }
 
 const SEED_COMMENTS_MAP: Record<string, CommentItem[]> = {
+  "story-8": [
+    {
+      id: "cmt-seed-8-1",
+      authorName: "Cô Năm (Thân nhân khoa Nội - TTYT Quế Sơn)",
+      content: "Sáng sớm nhận được bát cháo nóng hổi thơm ngon của các cháu mà ấm lòng quá. Chăm người nhà nằm viện tốn kém, có bát cháo sáng nghĩa tình thế này quý giá lắm. Cảm ơn các cháu CLB rất nhiều!",
+      createdAt: "10/09/2026",
+    },
+    {
+      id: "cmt-seed-8-2",
+      authorName: "Trương Hoàng Long",
+      content: "Thấy nụ cười và lời cảm ơn chân thành của các cô chú bệnh nhân là bao mệt nhọc thức khuya dậy sớm chuẩn bị đều tan biến hết. Vợ chồng mình rất vui khi được chung tay gieo duyên cùng Hoa Trên Đá!",
+      createdAt: "10/09/2026",
+    },
+    {
+      id: "cmt-seed-8-3",
+      authorName: "Thu Hằng (TNV)",
+      content: "Nồi cháo đầy ắp thịt bằm, bí đỏ và hạt sen thơm phức. Nhìn các cô chú ăn ngon miệng mà thương vô cùng. Hẹn gặp lại mọi người ở đợt phát cháo định kỳ tháng sau nhé!",
+      createdAt: "11/09/2026",
+    },
+  ],
+  "chao-tinh-nguyen-benh-vien-que-son": [
+    {
+      id: "cmt-seed-8-1",
+      authorName: "Cô Năm (Thân nhân khoa Nội - TTYT Quế Sơn)",
+      content: "Sáng sớm nhận được bát cháo nóng hổi thơm ngon của các cháu mà ấm lòng quá. Chăm người nhà nằm viện tốn kém, có bát cháo sáng nghĩa tình thế này quý giá lắm. Cảm ơn các cháu CLB rất nhiều!",
+      createdAt: "10/09/2026",
+    },
+    {
+      id: "cmt-seed-8-2",
+      authorName: "Trương Hoàng Long",
+      content: "Thấy nụ cười và lời cảm ơn chân thành của các cô chú bệnh nhân là bao mệt nhọc thức khuya dậy sớm chuẩn bị đều tan biến hết. Vợ chồng mình rất vui khi được chung tay gieo duyên cùng Hoa Trên Đá!",
+      createdAt: "10/09/2026",
+    },
+    {
+      id: "cmt-seed-8-3",
+      authorName: "Thu Hằng (TNV)",
+      content: "Nồi cháo đầy ắp thịt bằm, bí đỏ và hạt sen thơm phức. Nhìn các cô chú ăn ngon miệng mà thương vô cùng. Hẹn gặp lại mọi người ở đợt phát cháo định kỳ tháng sau nhé!",
+      createdAt: "11/09/2026",
+    },
+  ],
   "story-7": [
     {
       id: "cmt-seed-7-1",
