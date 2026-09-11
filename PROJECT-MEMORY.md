@@ -27,7 +27,7 @@
    - Nguyễn Quang Hiếu (Trưởng Ban Truyền Thông)
    - Ảnh đại diện: Đã crop vuông 400x400 WebP tại `/images/bdh_*.webp`.
 2. **Bài viết / Câu chuyện (8 bài chính thức)**:
-   - *Nồi cháo tình nguyện ấm lòng người bệnh tại Bệnh viện Quế Sơn* (Tác giả: Ban Điều Hành, tri ân vợ chồng anh Trương Hoàng Long, nhúng video YouTube thực tế, ảnh bìa WebP & JPEG 1200x630 tại `/images/chao_que_son/chao_cover.*`, đăng 10/09/2026)
+   - *Bếp Yêu Thương lần 1: Ấm lòng người bệnh tại Bệnh viện Quế Sơn* (Tác giả: Ban Điều Hành, tri ân vợ chồng anh Trương Hoàng Long, nhúng video YouTube thực tế, ảnh bìa WebP & JPEG 1200x630 tại `/images/chao_que_son/chao_cover.*`, đăng 10/09/2026)
    - *Nhìn lại hành trình Kết nối yêu thương 17: Một ngày ở Trà Leng* (Tác giả: Ban Điều Hành, nhúng video YouTube thực tế, ảnh bìa WebP tại `/images/ketnoiyeuthuong17/knyt17_cover.webp`, đăng 05/09/2026)
    - *Lời kêu gọi yêu thương: Xin chung tay giúp đỡ chị Lê Thị Liêu* (Tác giả: Ban Điều Hành, nhúng video YouTube phóng sự, ảnh bìa WebP tại `/images/hoancanh/chi_lieu.webp`, đăng 03/09/2026)
    - *Búp măng non trên hành trình yêu thương* (Tác giả: Hoa Trên Đá, 4 ảnh minh họa WebP tại `/images/bupmangnon/`, đăng 03/09/2026)
@@ -39,7 +39,7 @@
 3. **Dự án & Minh bạch tài chính**:
    - Đã dọn sạch các dự án và báo cáo thu/chi test. Sẵn sàng nhập số liệu thực tế khi CLB phát động chiến dịch mới.
 4. **4 Mảng Hoạt Động Cốt Lõi**:
-   - *Phát cháo tình nguyện tại các bệnh viện*: Nấu và phát cháo định kỳ tại các bệnh viện Duy Xuyên và Quế Sơn, mở rộng tương lai.
+   - *Chuỗi Bếp Yêu Thương tại các bệnh viện*: Nấu và trao tặng những bữa cháo dinh dưỡng ấm nóng định kỳ tại các bệnh viện Duy Xuyên và Quế Sơn, mở rộng tương lai.
    - *Chương trình hành trình vùng cao*: Lắp đặt đèn năng lượng mặt trời, nấu ăn dinh dưỡng cho học sinh và bà con, trao áo ấm và quà tặng.
    - *Hỗ trợ học sinh nghèo vượt khó hằng tháng*: Trao học bổng và kinh phí hỗ trợ học tập định kỳ hằng tháng.
    - *Hỗ trợ các trường hợp khẩn cấp & tai nạn*: Kêu gọi và tiếp sức kịp thời cho các ca tai nạn đột xuất, bệnh hiểm nghèo và thiên tai.

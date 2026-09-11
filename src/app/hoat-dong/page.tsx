@@ -11,11 +11,11 @@ export const revalidate = 60;
 export default function Activities() {
   const activityFields = [
     {
-      title: "Phát cháo tình nguyện tại các bệnh viện",
+      title: "Chuỗi “Bếp Yêu Thương” tại các bệnh viện",
       tag: "Bệnh viện Duy Xuyên & Quế Sơn",
-      description: "Tổ chức nấu và phát cháo dinh dưỡng ấm nóng miễn phí định kỳ tại các bệnh viện / Trung tâm Y tế huyện Duy Xuyên và Quế Sơn, sẻ chia gánh nặng bữa ăn cùng các bệnh nhân nghèo và người nhà; định hướng mở rộng thêm các cơ sở y tế lân cận.",
+      description: "Tổ chức nấu và trao tặng những phần cháo dinh dưỡng ấm nóng miễn phí định kỳ qua chuỗi “Bếp Yêu Thương” tại các bệnh viện / Trung tâm Y tế huyện Duy Xuyên và Quế Sơn, sẻ chia gánh nặng bữa ăn cùng các bệnh nhân nghèo và người nhà; định hướng mở rộng thêm các cơ sở y tế lân cận.",
       highlights: [
-        "Nấu và trao tặng các nồi cháo dinh dưỡng nóng sốt định kỳ",
+        "Nấu và trao tặng các nồi cháo dinh dưỡng nóng sốt định kỳ qua chuỗi Bếp Yêu Thương",
         "Tiếp sức cho bệnh nhân nghèo và thân nhân đang điều trị",
         "Mục tiêu nhân rộng sang nhiều bệnh viện trong khu vực",
       ],
