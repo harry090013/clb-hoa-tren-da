@@ -27,7 +27,7 @@
    - Nguyễn Quang Hiếu (Trưởng Ban Truyền Thông)
    - Ảnh đại diện: Đã crop vuông 400x400 WebP tại `/images/bdh_*.webp`.
 2. **Bài viết / Câu chuyện (9 bài chính thức)**:
-   - *Bếp Yêu Thương lần 2: Nồi cháo nghĩa tình tại Bệnh viện Duy Xuyên* (Tác giả: Ban Điều Hành, nhúng video YouTube thực tế, ảnh bìa WebP & JPEG 1200x630 tại `/images/bep_yeu_thuong_2/bep2_cover.*`, đăng 21/09/2026)
+   - *Bếp Yêu Thương lần 2: Nồi cháo nghĩa tình tại Bệnh viện Duy Xuyên* (Tác giả: Ban Điều Hành, tri ân 3 anh chị tại Hội An, chị Thương ở Duy Xuyên và anh Phan Thanh Tâm hỗ trợ chuyến xe, nhúng video YouTube thực tế, ảnh bìa WebP & JPEG 1200x630 tại `/images/bep_yeu_thuong_2/bep2_cover.*`, đăng 21/09/2026)
    - *Bếp Yêu Thương lần 1: Ấm lòng người bệnh tại Bệnh viện Quế Sơn* (Tác giả: Ban Điều Hành, tri ân vợ chồng anh Trương Hoàng Long, nhúng video YouTube thực tế, ảnh bìa WebP & JPEG 1200x630 tại `/images/chao_que_son/chao_cover.*`, đăng 10/09/2026)
    - *Nhìn lại hành trình Kết nối yêu thương 17: Một ngày ở Trà Leng* (Tác giả: Ban Điều Hành, nhúng video YouTube thực tế, ảnh bìa WebP tại `/images/ketnoiyeuthuong17/knyt17_cover.webp`, đăng 05/09/2026)
    - *Lời kêu gọi yêu thương: Xin chung tay giúp đỡ chị Lê Thị Liêu* (Tác giả: Ban Điều Hành, nhúng video YouTube phóng sự, ảnh bìa WebP tại `/images/hoancanh/chi_lieu.webp`, đăng 03/09/2026)
