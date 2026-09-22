@@ -52,6 +52,12 @@ const SEED_COMMENTS_MAP: Record<string, CommentItem[]> = {
       content: "Chăm người nhà cả tuần nay mệt mỏi, sáng nay được các bạn tình nguyện viên trao tận tay tô cháo thơm phức và lời hỏi thăm ân cần, tự nhiên thấy xúc động rơi nước mắt. Chúc CLB ngày càng phát triển!",
       createdAt: "22/09/2026",
     },
+    {
+      id: "cmt-seed-9-4",
+      authorName: "Nguyễn Thương (Duy Xuyên)",
+      content: "Thật hạnh phúc khi được cùng các anh chị em Hội An và các bạn trẻ Hoa Trên Đá cùng nấu và trao tận tay từng bát cháo ấm nóng cho bà con quê mình. Cảm ơn chuyến xe hỗ trợ của anh Phan Thanh Tâm đã giúp hành trình diễn ra thật trọn vẹn và đong đầy yêu thương!",
+      createdAt: "21/09/2026",
+    },
   ],
   "bep-yeu-thuong-lan-2-benh-vien-duy-xuyen": [
     {
@@ -71,6 +77,12 @@ const SEED_COMMENTS_MAP: Record<string, CommentItem[]> = {
       authorName: "Cô Lê Thị Lan (Thân nhân người bệnh)",
       content: "Chăm người nhà cả tuần nay mệt mỏi, sáng nay được các bạn tình nguyện viên trao tận tay tô cháo thơm phức và lời hỏi thăm ân cần, tự nhiên thấy xúc động rơi nước mắt. Chúc CLB ngày càng phát triển!",
       createdAt: "22/09/2026",
+    },
+    {
+      id: "cmt-seed-9-4",
+      authorName: "Nguyễn Thương (Duy Xuyên)",
+      content: "Thật hạnh phúc khi được cùng các anh chị em Hội An và các bạn trẻ Hoa Trên Đá cùng nấu và trao tận tay từng bát cháo ấm nóng cho bà con quê mình. Cảm ơn chuyến xe hỗ trợ của anh Phan Thanh Tâm đã giúp hành trình diễn ra thật trọn vẹn và đong đầy yêu thương!",
+      createdAt: "21/09/2026",
     },
   ],
   "bep-yeu-thuong-lan-1-benh-vien-que-son": [
