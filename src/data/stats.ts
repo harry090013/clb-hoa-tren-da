@@ -21,7 +21,7 @@ export const impactStats: ImpactStat[] = [
     id: 'stat-3',
     key: 'meals_and_gifts',
     label: 'Bữa ăn & Phần quà trao gửi',
-    value: 3800,
+    value: 4100,
     suffix: '+',
     displayOrder: 3,
   },

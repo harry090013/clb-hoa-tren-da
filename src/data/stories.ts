@@ -2,6 +2,37 @@ import { Story } from '../types';
 
 export const stories: Story[] = [
   {
+    id: 'story-9',
+    title: 'Bếp Yêu Thương lần 2: Nồi cháo nghĩa tình tại Bệnh viện Duy Xuyên',
+    slug: 'bep-yeu-thuong-lan-2-benh-vien-duy-xuyen',
+    excerpt: 'Tiếp nối thành công của Bếp Yêu Thương lần 1, CLB Hoa Trên Đá đã mang những phần cháo ấm nóng, bổ dưỡng đến với các bệnh nhân và thân nhân nghèo tại Trung tâm Y tế huyện Duy Xuyên.',
+    content: `Sau chuyến hành trình Bếp Yêu Thương lần 1 đong đầy cảm xúc tại Quế Sơn, ngọn lửa của sự sẻ chia tiếp tục được các thành viên Câu lạc bộ Thiện nguyện Hoa Trên Đá thắp sáng và trao gửi đến điểm dừng chân tiếp theo: Trung tâm Y tế huyện Duy Xuyên.
+
+Sáng sớm ngày 21/09/2026, giữa tiết trời se lạnh đầu thu, gian bếp nhỏ của câu lạc bộ đã đỏ lửa từ rất sớm. Mùi gạo thơm hòa cùng vị ngọt của thịt bằm, rau củ và hạt sen tươi lan tỏa, đánh thức một buổi sớm tinh mơ đầy hân hoan của đội ngũ tình nguyện viên. Từng công đoạn sơ chế, nấu cháo, đóng hộp và vận chuyển đều được mọi người thực hiện cẩn trọng, tỉ mỉ với tất cả sự chu đáo và lòng trắc ẩn.
+
+Khi xe cháo dừng trước sân Bệnh viện Duy Xuyên, những làn khói nghi ngút bốc lên mang theo hơi ấm giữa hành lang bệnh viện. Từng bát cháo nóng sốt được các bạn trẻ Hoa Trên Đá trân trọng trao tận tay từng người bệnh, từng thân nhân đang ngày đêm túc trực chăm sóc người nhà.
+
+https://youtu.be/Dw0vX-zKkRA
+
+Đi qua những khoa bệnh, nhìn những đôi mắt thâm quầng vì lo âu, những bước chân nặng trĩu sau chuỗi ngày chống chọi với ốm đau, chúng mình càng thấm thía hơn giá trị của những điều bình dị. Một bát cháo buổi sáng tuy không mang giá trị vật chất quá lớn, nhưng lại là sự động viên kịp thời, giúp bà con cảm nhận được rằng mình không hề đơn độc trong hành trình vượt qua nghịch cảnh.
+
+Bếp Yêu Thương là chuỗi hoạt động định kỳ hằng tháng được Hoa Trên Đá bền bỉ triển khai tại các trung tâm y tế và bệnh viện trên địa bàn Đà Nẵng và Quảng Nam cũ. Không chỉ dừng lại ở Quế Sơn hay Duy Xuyên, chúng mình hy vọng sẽ có thêm nhiều cơ duyên để mở rộng những gian bếp nghĩa tình này đến với nhiều cơ sở y tế hơn nữa trong tương lai.
+
+Hoa Trên Đá xin gửi lời tri ân sâu sắc đến Quý Mạnh Thường Quân, các nhà hảo tâm và toàn thể anh chị em tình nguyện viên đã cùng nhau góp công, góp của để nồi cháo Bếp Yêu Thương lần 2 được thơm ngon và trọn vẹn yêu thương.
+
+Mọi sự đồng hành, hỗ trợ và kết nối gieo duyên cho những chuyến Bếp Yêu Thương tiếp theo, xin vui lòng liên hệ Ban Điều Hành qua số Hotline: 0379 163 913.
+
+Hoa Trên Đá — Từ đá nở hoa, từ tâm lan tỏa.`,
+    coverImage: '/images/bep_yeu_thuong_2/bep2_cover.webp',
+    authorName: 'Ban Điều Hành',
+    storyType: 'Bếp Yêu Thương',
+    featured: true,
+    status: 'published',
+    publishedAt: '2026-09-21T08:00:00Z',
+    createdAt: '2026-09-21T08:00:00Z',
+    updatedAt: '2026-09-21T08:00:00Z',
+  },
+  {
     id: 'story-8',
     title: 'Bếp Yêu Thương lần 1: Ấm lòng người bệnh tại Bệnh viện Quế Sơn',
     slug: 'bep-yeu-thuong-lan-1-benh-vien-que-son',

@@ -33,6 +33,46 @@ interface CommentItem {
 }
 
 const SEED_COMMENTS_MAP: Record<string, CommentItem[]> = {
+  "story-9": [
+    {
+      id: "cmt-seed-9-1",
+      authorName: "Chú Bảy (Khoa Ngoại - TTYT Duy Xuyên)",
+      content: "Cháo ngon và nhiều thịt lắm các cháu ơi. Ở viện ăn uống kham khổ, nhận được phần cháo nóng buổi sáng ấm cả lòng. Cảm ơn tấm lòng của các bạn trẻ rất nhiều!",
+      createdAt: "21/09/2026",
+    },
+    {
+      id: "cmt-seed-9-2",
+      authorName: "Thanh Nhã (TNV Bếp Yêu Thương)",
+      content: "Chuyến Bếp Yêu Thương lần 2 tại Duy Xuyên thành công tốt đẹp! Nhìn nụ cười của bà con và các cô chú lớn tuổi là mọi mệt nhọc thức khuya dậy sớm đều xứng đáng. Mong bếp luôn đỏ lửa!",
+      createdAt: "21/09/2026",
+    },
+    {
+      id: "cmt-seed-9-3",
+      authorName: "Cô Lê Thị Lan (Thân nhân người bệnh)",
+      content: "Chăm người nhà cả tuần nay mệt mỏi, sáng nay được các bạn tình nguyện viên trao tận tay tô cháo thơm phức và lời hỏi thăm ân cần, tự nhiên thấy xúc động rơi nước mắt. Chúc CLB ngày càng phát triển!",
+      createdAt: "22/09/2026",
+    },
+  ],
+  "bep-yeu-thuong-lan-2-benh-vien-duy-xuyen": [
+    {
+      id: "cmt-seed-9-1",
+      authorName: "Chú Bảy (Khoa Ngoại - TTYT Duy Xuyên)",
+      content: "Cháo ngon và nhiều thịt lắm các cháu ơi. Ở viện ăn uống kham khổ, nhận được phần cháo nóng buổi sáng ấm cả lòng. Cảm ơn tấm lòng của các bạn trẻ rất nhiều!",
+      createdAt: "21/09/2026",
+    },
+    {
+      id: "cmt-seed-9-2",
+      authorName: "Thanh Nhã (TNV Bếp Yêu Thương)",
+      content: "Chuyến Bếp Yêu Thương lần 2 tại Duy Xuyên thành công tốt đẹp! Nhìn nụ cười của bà con và các cô chú lớn tuổi là mọi mệt nhọc thức khuya dậy sớm đều xứng đáng. Mong bếp luôn đỏ lửa!",
+      createdAt: "21/09/2026",
+    },
+    {
+      id: "cmt-seed-9-3",
+      authorName: "Cô Lê Thị Lan (Thân nhân người bệnh)",
+      content: "Chăm người nhà cả tuần nay mệt mỏi, sáng nay được các bạn tình nguyện viên trao tận tay tô cháo thơm phức và lời hỏi thăm ân cần, tự nhiên thấy xúc động rơi nước mắt. Chúc CLB ngày càng phát triển!",
+      createdAt: "22/09/2026",
+    },
+  ],
   "bep-yeu-thuong-lan-1-benh-vien-que-son": [
     {
       id: "cmt-seed-8-1",
